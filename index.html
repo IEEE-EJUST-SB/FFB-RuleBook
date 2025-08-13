@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFB 2025 Rule Book - Professional Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0066ff;
+            --primary-blue-dark: #0052cc;
+            --secondary-orange: #ff6b35;
+            --accent-green: #00d084;
+            --accent-purple: #8b5cf6;
+            --accent-pink: #ec4899;
+            --navy-900: #0f172a;
+            --navy-800: #1e293b;
+            --navy-700: #334155;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-600: #475569;
+            --slate-800: #1e293b;
+            --white: #ffffff;
+            --red-500: #ef4444;
+            --yellow-400: #fbbf24;
+            
+            /* Enhanced shadows */
+            --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-glow: 0 0 20px rgba(0, 102, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--slate-800);
+            background: linear-gradient(135deg, var(--slate-50) 0%, var(--slate-100) 100%);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .animate-on-scroll.fade-in { 
+            transform: translateY(30px);
+        }
+        .animate-on-scroll.slide-in-left { 
+            transform: translateX(-50px);
+        }
+        .animate-on-scroll.slide-in-right { 
+            transform: translateX(50px);
+        }
+        .animate-on-scroll.zoom-in { 
+            transform: scale(0.9);
+        }
+        .animate-on-scroll.rotate-in { 
+            transform: rotate(-5deg) scale(0.95);
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translate(0, 0) scale(1) rotate(0deg);
+        }
+
+        /* Floating animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 102, 255, 0.6); }
+        }
+
+        /* Global Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(0, 102, 255, 0.02) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .section:nth-of-type(even) {
+            background: var(--white);
+        }
+        
+        .section:nth-of-type(even)::before {
+            background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.02) 0%, transparent 70%);
+            animation-delay: -10s;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-header h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--navy-900) 0%, var(--primary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange));
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--slate-600);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
+            color: var(--white);
+            padding: 150px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 102, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
+            animation: pulse-bg 15s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-bg {
+            0%, 100% { 
+                opacity: 0.8; 
+                transform: scale(1) rotate(0deg); 
+            }
+            33% { 
+                opacity: 1; 
+                transform: scale(1.1) rotate(1deg); 
+            }
+            66% { 
+                opacity: 0.9; 
+                transform: scale(1.05) rotate(-1deg); 
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 5.5rem;
+            font-weight: 900;
+            letter-spacing: -3px;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+        
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary-blue) 50%, var(--secondary-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.6rem;
+            color: var(--slate-200);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Enhanced Navigation */
+        .nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1.2rem 1.5rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            border-bottom: 1px solid var(--slate-200);
+            transition: all 0.3s ease;
+        }
+        
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.8rem 1.5rem;
+        }
+        
+        .nav-container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-brand { 
+            font-weight: 800; 
+            font-size: 1.4rem; 
+            background: linear-gradient(135deg, var(--navy-900), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links { 
+            display: flex; 
+            gap: 0.5rem; 
+            list-style: none; 
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate-600);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            /* background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange)); */
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            left: 0;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active { 
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Introduction Section */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 160px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .intro-grid .text-content h3 { 
+            font-size: 2.2rem; 
+            background: linear-gradient(135deg, var(--navy-900), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem; 
+            font-weight: 700;
+        }
+        
+        .intro-grid .text-content p { 
+            color: var(--slate-600); 
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .sdg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 2.5rem;
+        }
+        
+        .sdg-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sdg-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(255, 107, 53, 0.1));
+            transition: left 0.3s ease;
+            z-index: 0;
+        }
+        
+        .sdg-card:hover::before {
+            left: 0;
+        }
+        
+        .sdg-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .sdg-card .sdg-icon { 
+            font-size: 3rem; 
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sdg-card .sdg-title { 
+            font-weight: 700; 
+            color: var(--navy-900);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .definitions-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .definitions-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange), var(--accent-purple));
+        }
+        
+        .definitions-card h3 { 
+            text-align: center; 
+            margin-bottom: 2.5rem;
+            font-size: 1.8rem;
+            color: var(--navy-900);
+        }
+        
+        .definitions-card p { 
+            border-left: 4px solid var(--primary-blue); 
+            padding-left: 1.5rem; 
+            margin-bottom: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .definitions-card p:hover {
+            border-left-color: var(--secondary-orange);
+            transform: translateX(8px);
+        }
+        
+        .definitions-card p strong { 
+            color: var(--navy-900);
+            font-weight: 700;
+        }
+
+        /* Enhanced Timeline */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            position: relative;
+            margin: 100px 0;
+            z-index: 2;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange));
+            transform: translateY(-50%);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            z-index: 1;
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .timeline-item .icon {
+            width: 70px;
+            height: 70px;
+            background: var(--white);
+            border: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .timeline-item:hover .icon {
+            transform: scale(1.2) rotate(15deg);
+            border-color: var(--secondary-orange);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .timeline-item .date {
+            font-weight: 800;
+            color: var(--navy-900);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item .event {
+            color: var(--slate-600);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Enhanced Structure Cards */
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .structure-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border-top: 6px solid transparent;
+            background-clip: padding-box;
+        }
+        
+        .structure-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange));
+        }
+        
+        .structure-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .structure-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.6rem;
+            color: var(--navy-900);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .structure-card h3 svg {
+            color: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .structure-card:hover h3 svg {
+            color: var(--secondary-orange);
+            transform: scale(1.1);
+        }
+        
+        .structure-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .structure-card li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 1rem;
+            color: var(--slate-600);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+        
+        .structure-card li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .structure-card:hover li::before {
+            color: var(--secondary-orange);
+            transform: scale(1.2);
+        }
+
+        /* Enhanced Categories */
+        .category-grid {
+            display: grid;
+            gap: 100px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-card {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            border-top: 8px solid;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+            z-index: 1;
+        }
+        
+        .category-card:hover::before {
+            left: 100%;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-8px) scale(1.01);
+        }
+        
+        .category-card.junior {
+            border-color: var(--accent-green);
+        }
+        
+        .category-card.intermediate {
+            border-color: var(--secondary-orange);
+        }
+        
+        .category-card.senior {
+            border-color: var(--accent-purple);
+        }
+        
+        .category-header {
+            padding: 3.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-header .title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--navy-900);
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-header .age {
+            font-weight: 600;
+            color: var(--slate-600);
+            font-size: 1.1rem;
+        }
+        
+        .category-content-wrapper {
+            background: linear-gradient(135deg, var(--slate-50), var(--slate-100));
+            padding: 3.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced Max Score Card */
+        .max-score-card {
+            background: linear-gradient(135deg, var(--navy-900), var(--primary-blue));
+            color: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .max-score-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .max-score-card .label {
+            font-size: 1.3rem;
+            font-weight: 600;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .max-score-card .score {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Enhanced Scoring Table */
+        .scoring-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .scoring-table th {
+            text-align: left;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--slate-100), var(--slate-200));
+            color: var(--slate-700);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .scoring-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--slate-200);
+            vertical-align: middle;
+            transition: all 0.3s ease;
+        }
+        
+        .scoring-table tr:hover td {
+            background-color: var(--slate-50);
+        }
+        
+        .scoring-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .points-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--white);
+            white-space: nowrap;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .points-badge:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .points-badge.mission {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+        }
+        
+        .points-badge.bonus {
+            background: linear-gradient(135deg, var(--accent-green), #00a86b);
+        }
+        
+        .points-badge.penalty {
+            background: linear-gradient(135deg, var(--red-500), #dc2626);
+        }
+        
+        .points-badge.disqualified {
+            background: linear-gradient(135deg, var(--slate-800), var(--slate-900));
+            text-transform: uppercase;
+        }
+
+        /* Enhanced Prizes Section */
+        .prize-category-block {
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .prize-category-header {
+            font-size: 2.4rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .prize-category-header::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            border-radius: 2px;
+        }
+        
+        .prize-category-header.junior-color {
+            color: var(--accent-green);
+        }
+        
+        .prize-category-header.junior-color::after {
+            background: var(--accent-green);
+        }
+        
+        .prize-category-header.intermediate-color {
+            color: var(--secondary-orange);
+        }
+        
+        .prize-category-header.intermediate-color::after {
+            background: var(--secondary-orange);
+        }
+        
+        .prize-category-header.senior-color {
+            color: var(--accent-purple);
+        }
+        
+        .prize-category-header.senior-color::after {
+            background: var(--accent-purple);
+        }
+        
+        .prize-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .prize-card {
+            text-align: center;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 8px solid;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .prize-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+            transition: top 0.6s ease;
+        }
+        
+        .prize-card:hover::before {
+            top: 100%;
+        }
+        
+        .prize-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .prize-card.first {
+            border-color: #ffd700;
+        }
+        
+        .prize-card.second {
+            border-color: #c0c0c0;
+        }
+        
+        .prize-card.third {
+            border-color: #cd7f32;
+        }
+        
+        .prize-card h3 {
+            font-size: 1.6rem;
+            margin: 1rem 0 1rem;
+            font-weight: 700;
+            color: var(--navy-900);
+        }
+        
+        .prize-card .amount {
+            font-size: 2.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--navy-900), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Enhanced FAQ Section */
+        .faq-item {
+            background: var(--white);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--slate-200);
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+        
+        .faq-question {
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            color: var(--navy-900);
+            position: relative;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question.open::after {
+            transform: rotate(45deg);
+            color: var(--secondary-orange);
+        }
+        
+        .faq-question:hover {
+            background: linear-gradient(135deg, var(--slate-50), var(--slate-100));
+        }
+        
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--slate-50);
+        }
+        
+        .faq-answer p {
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--slate-200);
+            color: var(--slate-600);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+        
+        .faq-question.open {
+            background: linear-gradient(135deg, var(--slate-50), var(--slate-100));
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: linear-gradient(135deg, var(--navy-900), var(--navy-800));
+            color: var(--slate-200);
+            padding: 5rem 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+            animation: pulse-bg 20s ease-in-out infinite;
+        }
+        
+        footer .nav-brand {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        footer p {
+            margin-top: 1.5rem;
+            color: var(--slate-400);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced Section Images */
+        .section-image {
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            margin-top: 2rem;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-image:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Floating Action Elements */
+        .floating-element {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .floating-element:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Particle Background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particle-float 15s infinite linear;
+        }
+        
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--navy-900);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 4rem; }
+            .section-header h2 { font-size: 2.8rem; }
+            .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+            .category-content-wrapper { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 24px;
+                min-height: 80vh;
+            }
+            
+            .hero h1 { 
+                font-size: 3.2rem;
+                letter-spacing: -1px;
+            }
+            
+            .hero .subtitle { 
+                font-size: 1.3rem; 
+                margin-bottom: 2rem;
+            }
+            
+            .nav-links { 
+                display: none; 
+            }
+            
+            .section-header h2 { 
+                font-size: 2.2rem; 
+            }
+            
+            .section {
+                padding: 120px 0;
+                position: relative;
+                overflow: visible;
+            }
+            .section#introduction {
+                padding-top: 60px;
+                margin-top: 40px;
+            }
+            
+            .intro-grid .image-content { 
+                order: -1;
+            }
+            
+            .timeline { 
+                flex-direction: column; 
+                gap: 40px; 
+                align-items: center;
+            }
+            
+            .timeline::before { 
+                display: none;
+            }
+            
+            .timeline-item .icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .structure-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .structure-card,
+            .definitions-card {
+                padding: 2rem;
+            }
+            
+            .category-header {
+                padding: 2.5rem;
+            }
+            
+            .category-content-wrapper {
+                padding: 2.5rem;
+                gap: 2rem;
+            }
+            
+            .prize-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .floating-element {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .nav {
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 0 16px;
+            }
+            
+            .structure-card,
+            .definitions-card {
+                padding: 1.5rem;
+            }
+            
+            .scoring-table th,
+            .scoring-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.85rem;
+            }
+            
+            .max-score-card {
+                padding: 2rem;
+            }
+            
+            .max-score-card .score {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particle Background -->
+    <div class="particles" id="particles"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="animate-on-scroll fade-in">FFB 2025 <span>Rule Book</span></h1>
+            <p class="subtitle animate-on-scroll fade-in" style="animation-delay: 0.3s;">The complete professional guide for the Fire Fighting Boats Competition. All rules, scoring, and specifications in one place.</p>
+        </div>
+    </header>
+
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">FFB 2025</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#structure">Structure</a></li>
+                <li><a href="#robot-specs">Robot Specs</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#safety">Safety</a></li>
+                <li><a href="#conduct">Conduct</a></li>
+                <li><a href="#prizes">Prizes</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="section" id="introduction">
+            <div class="container">
+                <div class="intro-grid">
+                </div>
+            </div></section>
+    <section class="section" id="introduction">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="text-content animate-on-scroll slide-in-left">
+                    <h3>A Dynamic Robotics Challenge</h3>
+                    <p>The Firefighting Boats Competition simulates a marine firefighting and rescue mission, challenging teams to design, build, and operate a robotic boat to navigate hazards, rescue items, and extinguish a fire with precision and speed. This edition enhances the complexity, blending mechanical, electronic, and control system engineering to solve real-world maritime safety problems.</p>
+                </div>
+                <div class="image-content animate-on-scroll slide-in-right">
+                     <img src="img1.jpg" alt="A well-designed fire fighting boat model" class="section-image" />
+                </div>
+            </div>
+            <div class="intro-grid" style="margin-top: 100px;">
+                <div class="definitions-card animate-on-scroll slide-in-left">
+                    <h3>Official Terminology</h3>
+                    <p><strong>Individual Team:</strong> A team not affiliated with an academy (e.g., school teams, independent groups).</p>
+                    <p><strong>Manual Adjustment:</strong> Physically correcting the robot by hand during a trial.</p>
+                    <p><strong>Rescue:</strong> Recovering floating objects according to category-specific rules.</p>
+                    <p><strong>Incomplete Extinguishing:</strong> When a doused flame re-ignites.</p>
+                    <p><strong>Precise Targeting:</strong> Hitting the target within the specified diameter.</p>
+                </div>
+                 <div class="text-content animate-on-scroll slide-in-right">
+                    <h3>Vision & Global Impact</h3>
+                    <p>More than a competition, this is a platform to inspire innovators. We foster skills in marine safety, fire mitigation, and environmental responsibility, aligning with key UN Sustainable Development Goals (SDGs).</p>
+                    <div class="sdg-grid">
+                        <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.1s;"><div class="sdg-icon">🏗️</div><div class="sdg-title">SDG 9: Industry & Innovation</div></div>
+                        <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;"><div class="sdg-icon">💨</div><div class="sdg-title">SDG 13: Climate Action</div></div>
+                        <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.3s;"><div class="sdg-icon">🌊</div><div class="sdg-title">SDG 14: Life Below Water</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="structure">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>Competition Structure</h2>
+                <p>From registration to the final buzzer, here's how the competition unfolds. Familiarize yourself with the key dates and procedures.</p>
+            </div>
+            <div class="timeline animate-on-scroll fade-in">
+                <div class="timeline-item"><div class="icon">📅</div><div class="date">Aug 15, 2025</div><div class="event">Registration Opens</div></div>
+                <div class="timeline-item"><div class="icon">🔒</div><div class="date">Sep 10, 2025</div><div class="event">Registration Closes</div></div>
+                <div class="timeline-item"><div class="icon">🧑‍🏫</div><div class="date">Sep 12-28</div><div class="event">Technical Mentoring</div></div>
+                <div class="timeline-item"><div class="icon">🏆</div><div class="date">Oct 4, 2025</div><div class="event">Competition Day</div></div>
+            </div>
+             <div class="intro-grid" style="margin-top: 100px; align-items: flex-start;">
+                <div class="animate-on-scroll slide-in-left">
+                    <img src="img2.jpg" alt="Teams preparing their fire fighting boats" class="section-image" />
+                </div>
+                <div class="structure-card animate-on-scroll slide-in-right">
+                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h3a1 1 0 0 1 1 1v1"/><path d="M19 9h1a1 1 0 0 1 1 1v3"/><path d="M19 15h.01"/><path d="M19 19h.01"/><path d="M15 20h.01"/><path d="M12 20h.01"/><path d="M9 20h.01"/><path d="M5 20h.01"/><path d="M5 16h.01"/><path d="M5 12h.01"/><path d="M5 8h.01"/><path d="M9 4h.01"/><path d="M12 4h.01"/><path d="m5 4 1-1"/><path d="m19 20-1-1"/><path d="m5 20 1-1"/><path d="m19 4-1-1"/><path d="M9 8h6v6H9z"/></svg>Procedures</h3>
+                     <ul>
+                        <li><strong>Registration:</strong> Individuals (3-5 members) and Academies can register. Academy teams must have a dedicated supervisor present.</li>
+                        <li><strong>Testing:</strong> Teams get access to a testing arena after inspection. A 5-minute calibration period is provided before each official trial.</li>
+                        <li><strong>Inspection:</strong> Verifies all constraints and team knowledge. An official ID sticker is applied, which is mandatory for competition. No coaches allowed.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="robot-specs">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>General Robot Specifications</h2>
+                <p>These core rules apply to all robots across all categories. Adherence is mandatory and will be verified during inspection.</p>
+            </div>
+             <div class="structure-grid">
+                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0s;">
+                    <h3>⚖️ Weight Constraints</h3>
+                    <p>Maximum robot weight is <strong>3kg</strong>, including all components, batteries, and any onboard water at the start of the trial.</p>
+                </div>
+                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;">
+                    <h3>📏 Size Constraints</h3>
+                     <p>Maximum dimensions are <strong>25cm (L) x 25cm (W) x 10cm</strong> (submerged depth). The water hose must not exceed 5cm in length.</p>
+                </div>
+                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.4s;">
+                    <h3>🔥 Firefighting Constraints</h3>
+                     <p>The flame must be extinguished using <strong>water only</strong>. Any other method (e.g., air blowers) is strictly prohibited and results in round disqualification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="categories">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>Competition Categories</h2>
+                <p>The competition is divided into three categories based on age and complexity. Find your category to see the specific tasks, scoring, and rules.</p>
+            </div>
+            <div class="category-grid">
+                
+                <article class="category-card junior animate-on-scroll rotate-in">
+                    <header class="category-header">
+                        <h3 class="title">Junior Category</h3>
+                        <p class="age">Under 12 years old</p>
+                    </header>
+                    <div class="category-content-wrapper">
+                        <div>
+                            <h3>Tasks & Scoring</h3>
+                            <div class="max-score-card">
+                                <div class="label">Maximum Possible Score</div>
+                                <div class="score">685</div>
+                            </div>
+                            <table class="scoring-table">
+                                <thead><tr><th>Mission / Bonus</th><th style="text-align: right;">Points</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Navigate to fire location</td><td align="right"><span class="points-badge mission">100</span></td></tr>
+                                    <tr><td>Extinguish flame completely</td><td align="right"><span class="points-badge mission">200</span></td></tr>
+                                    <tr><td>Return to start position</td><td align="right"><span class="points-badge mission">50</span></td></tr>
+                                    <tr><td>Rescue Mission (Tap 2 items)</td><td align="right"><span class="points-badge mission">20 / item</span></td></tr>
+                                    <tr><td>Complete < 3 mins</td><td align="right"><span class="points-badge bonus">+100</span></td></tr>
+                                    <tr><td>Every second saved < 2 mins</td><td align="right"><span class="points-badge bonus">+1 / sec</span></td></tr>
+                                    <tr><td>Accurate targeting (within 10cm)</td><td align="right"><span class="points-badge bonus">+50</span></td></tr>
+                                    <tr><td>Efficient water usage</td><td align="right"><span class="points-badge bonus">+25</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                             <h3>Penalties & Rules</h3>
+                             <table class="scoring-table">
+                                 <thead><tr><th>Infraction</th><th style="text-align: right;">Penalty</th></tr></thead>
+                                 <tbody>
+                                    <tr><td>Wall collision (from 3rd+)</td><td align="right"><span class="points-badge penalty">-10</span></td></tr>
+                                    <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
+                                    <tr><td>Splashing other teams</td><td align="right"><span class="points-badge penalty">-25</span></td></tr>
+                                    <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-100</span></td></tr>
+                                    <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-20</span></td></tr>
+                                    <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-50 to -100</span></td></tr>
+                                    <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
+                                 </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="category-card intermediate animate-on-scroll rotate-in" style="animation-delay: 0.2s;">
+                    <header class="category-header">
+                        <h3 class="title">Intermediate Category</h3>
+                        <p class="age">12-18 years old</p>
+                    </header>
+                    <div class="category-content-wrapper">
+                        <div>
+                             <h3>Tasks & Scoring</h3>
+                            <div class="max-score-card">
+                                <div class="label">Maximum Possible Score</div>
+                                <div class="score">1125</div>
+                            </div>
+                            <table class="scoring-table">
+                                <thead><tr><th>Mission / Bonus</th><th style="text-align: right;">Points</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Navigate to fire location</td><td align="right"><span class="points-badge mission">100</span></td></tr>
+                                    <tr><td>Extinguish flames (2)</td><td align="right"><span class="points-badge mission">150 / candle</span></td></tr>
+                                    <tr><td>Return to start position</td><td align="right"><span class="points-badge mission">75</span></td></tr>
+                                    <tr><td>Rescue (Push/Pull 3 items)</td><td align="right"><span class="points-badge mission">20 / item</span></td></tr>
+                                    <tr><td>Complete under 3 mins</td><td align="right"><span class="points-badge bonus">+150</span></td></tr>
+                                    <tr><td>Every second saved < 2 mins</td><td align="right"><span class="points-badge bonus">+2 / sec</span></td></tr>
+                                    <tr><td>Accurate targeting (within 5cm)</td><td align="right"><span class="points-badge bonus">+50</span></td></tr>
+                                    <tr><td>Autonomous navigation</td><td align="right"><span class="points-badge bonus">+100</span></td></tr>
+                                    <tr><td>Efficient water usage</td><td align="right"><span class="points-badge bonus">+50</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                             <h3>Penalties & Rules</h3>
+                             <table class="scoring-table">
+                                 <thead><tr><th>Infraction</th><th style="text-align: right;">Penalty</th></tr></thead>
+                                 <tbody>
+                                    <tr><td>Wall collision</td><td align="right"><span class="points-badge penalty">-15</span></td></tr>
+                                    <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
+                                    <tr><td>Incomplete flame extinguishing</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
+                                    <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-150</span></td></tr>
+                                    <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-30</span></td></tr>
+                                    <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-75 to -150</span></td></tr>
+                                    <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
+                                 </tbody>
+                             </table>
+                             <img src="img3.jpg" alt="A fire fighting boat in the competition pool" class="section-image animate-on-scroll zoom-in" />
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="category-card senior animate-on-scroll rotate-in" style="animation-delay: 0.4s;">
+                    <header class="category-header">
+                        <h3 class="title">Senior Category</h3>
+                        <p class="age">18-25 years old</p>
+                    </header>
+                    <div class="category-content-wrapper">
+                        <div>
+                             <h3>Tasks & Scoring</h3>
+                            <div class="max-score-card">
+                                <div class="label">Maximum Possible Score</div>
+                                <div class="score">2775</div>
+                            </div>
+                            <table class="scoring-table">
+                                <thead><tr><th>Mission / Bonus</th><th style="text-align: right;">Points</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Navigate to fire location</td><td align="right"><span class="points-badge mission">150</span></td></tr>
+                                    <tr><td>Extinguish flames (up to 5)</td><td align="right"><span class="points-badge mission">150 / candle</span></td></tr>
+                                    <tr><td>Return to start position</td><td align="right"><span class="points-badge mission">100</span></td></tr>
+                                    <tr><td>Pick up rescue items (5)</td><td align="right"><span class="points-badge mission">20 / item</span></td></tr>
+                                    <tr><td>Transport items to rescue zone</td><td align="right"><span class="points-badge mission">30 / item</span></td></tr>
+                                    <tr><td>Complete under 4 mins</td><td align="right"><span class="points-badge bonus">+200</span></td></tr>
+                                    <tr><td>Complete under 3 mins</td><td align="right"><span class="points-badge bonus">+400</span></td></tr>
+                                    <tr><td>Every second saved < 2 mins</td><td align="right"><span class="points-badge bonus">+5 / sec</span></td></tr>
+                                    <tr><td>Precise targeting (within 3cm)</td><td align="right"><span class="points-badge bonus">+100</span></td></tr>
+                                    <tr><td>Fully autonomous operation</td><td align="right"><span class="points-badge bonus">+150</span></td></tr>
+                                    <tr><td>Efficient water usage</td><td align="right"><span class="points-badge bonus">+75</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                             <h3>Penalties & Rules</h3>
+                             <table class="scoring-table">
+                                 <thead><tr><th>Infraction</th><th style="text-align: right;">Penalty</th></tr></thead>
+                                 <tbody>
+                                    <tr><td>Wall / Obstacle collision</td><td align="right"><span class="points-badge penalty">-20 / -25</span></td></tr>
+                                    <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
+                                    <tr><td>Incomplete flame extinguishing</td><td align="right"><span class="points-badge penalty">-100</span></td></tr>
+                                    <tr><td>Dropping a rescue item</td><td align="right"><span class="points-badge penalty">-25</span></td></tr>
+                                    <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-40</span></td></tr>
+                                    <tr><td>Failed rescue pickup/placement</td><td align="right"><span class="points-badge penalty">-10 / -20</span></td></tr>
+                                    <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-200</span></td></tr>
+                                    <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-100 to -200</span></td></tr>
+                                    <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
+                                 </tbody>
+                             </table>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="safety">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>Safety Specifications</h2>
+                <p>Safety is paramount. All teams must strictly adhere to these regulations. Violations will be penalized and may lead to disqualification.</p>
+            </div>
+            <div class="structure-grid">
+                <div class="structure-card animate-on-scroll fade-in"><h3>💧 Water Safety</h3><ul><li><strong>Eco-friendly Materials:</strong> All materials must be non-toxic and must not leave debris in the pool.</li><li><strong>Perimeter Safety:</strong> Team members must remain behind designated safety lines. Only authorized members may handle boats at the water's edge.</li><li><strong>Equipment Rescue:</strong> Retrieval of a malfunctioning boat is handled exclusively by on-site organizers.</li></ul></div>
+                <div class="structure-card animate-on-scroll fade-in" style="animation-delay: 0.1s;"><h3>⚡ Electrical Safety</h3><ul><li><strong>Battery Handling:</strong> Maximum 12V power systems. All batteries must be securely mounted and sealed from water exposure.</li><li><strong>Wiring and Insulation:</strong> All electrical connections must be properly insulated and waterproofed.</li><li><strong>Circuit Protection:</strong> Systems must include appropriate fuses or current-limiting components.</li><li><strong>Component Safety:</strong> All electronics must be secure, isolated, and have clear emergency disconnects.</li></ul></div>
+                <div class="structure-card animate-on-scroll fade-in" style="animation-delay: 0.2s;"><h3>🔧 Mechanical Safety</h3><ul><li><strong>Sharp Edges:</strong> Robots must have no sharp or pointed projections. All edges must be smooth or covered.</li><li><strong>Propulsion Safety:</strong> Propellers and water jet nozzles must be enclosed in protective guards to prevent accidental contact.</li></ul></div>
+                <div class="structure-card animate-on-scroll fade-in" style="animation-delay: 0.3s;"><h3>🚒 Firefighting System</h3><ul><li><strong>Water Pressure:</strong> Water streams must operate at a safe pressure level.</li><li><strong>Controlled Activation:</strong> Systems must be designed to prevent accidental discharge outside the designated arena zone.</li></ul></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="conduct">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>Code of Conduct</h2>
+                <p>A positive, respectful, and collaborative environment is essential for a successful competition. All participants are expected to uphold these standards.</p>
+            </div>
+             <div class="structure-grid">
+                <div class="structure-card animate-on-scroll zoom-in"><h3>🤝 Team Interactions</h3><p>Respect other teams' space, equipment, and efforts. Sabotage or verbal misconduct is grounds for immediate disqualification. Collaboration is encouraged. Photographing or recording another team's robot during their trial is strictly forbidden.</p></div>
+                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;"><h3>🧑‍⚖️ Officials & Judging</h3><p>All communication with judges and staff must be polite. Only designated team spokespersons may approach judges. Arguments are not tolerated. All judges' decisions are final.</p></div>
+                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.4s;"><h3>📜 Infraction Policy</h3><p>Unsportsmanlike conduct will be handled via a three-step system: 1st Infraction is a verbal warning; 2nd is a -25 point deduction; 3rd results in disqualification.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="prizes">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>Awards & Prizes</h2>
+                <p>We recognize excellence in performance, design, and innovation. All teams receive a certificate and medal for their participation.</p>
+            </div>
+            
+            <div class="prize-category-block animate-on-scroll fade-in">
+                <h3 class="prize-category-header junior-color">🌟 Junior Category Awards</h3>
+                <div class="prize-grid">
+                    <div class="prize-card first"><h3>🥇 1st Place</h3><div class="amount">10,000 EGP</div><p>+ Gold Trophy</p></div>
+                    <div class="prize-card second"><h3>🥈 2nd Place</h3><div class="amount">8,000 EGP</div><p>+ Silver Trophy</p></div>
+                    <div class="prize-card third"><h3>🥉 3rd Place</h3><div class="amount">6,000 EGP</div><p>+ Bronze Trophy</p></div>
+                </div>
+            </div>
+
+            <div class="prize-category-block animate-on-scroll fade-in">
+                <h3 class="prize-category-header intermediate-color">⚡ Intermediate Category Awards</h3>
+                <div class="prize-grid">
+                    <div class="prize-card first"><h3>🥇 1st Place</h3><div class="amount">10,000 EGP</div><p>+ Gold Trophy</p></div>
+                    <div class="prize-card second"><h3>🥈 2nd Place</h3><div class="amount">8,000 EGP</div><p>+ Silver Trophy</p></div>
+                    <div class="prize-card third"><h3>🥉 3rd Place</h3><div class="amount">6,000 EGP</div><p>+ Bronze Trophy</p></div>
+                </div>
+            </div>
+
+            <div class="prize-category-block animate-on-scroll fade-in">
+                <h3 class="prize-category-header senior-color">🚀 Senior Category Awards</h3>
+                <div class="prize-grid">
+                    <div class="prize-card first"><h3>🥇 1st Place</h3><div class="amount">15,000 EGP</div><p>+ Gold Trophy</p></div>
+                    <div class="prize-card second"><h3>🥈 2nd Place</h3><div class="amount">11,000 EGP</div><p>+ Silver Trophy</p></div>
+                    <div class="prize-card third"><h3>🥉 3rd Place</h3><div class="amount">7,000 EGP</div><p>+ Bronze Trophy</p></div>
+                </div>
+            </div>
+
+             <div class="structure-card animate-on-scroll zoom-in" style="margin-top: 5rem; text-align: center;"><h3>🏆 Special Awards</h3><p>Best Boat Design, Best Boat Flyer, Fastest Extinguishing, Most Innovative Mechanism, Most Accurate Targeting, Best Navigation, Crowd's Favorite, Judge's Choice.</p></div>
+        </div>
+    </section>
+
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="animate-on-scroll fade-in">
+                <div class="faq-item"><div class="faq-question">Are LEGO and Arduino projects judged by the same criteria?</div><div class="faq-answer"><p>Yes, all teams are judged equally based on the scoring guidelines for their category, regardless of the platform used.</p></div></div>
+                <div class="faq-item"><div class="faq-question">Can we use the pool's water to extinguish the fire?</div><div class="faq-answer"><p>Yes, provided your mechanism is eco-friendly and does not contaminate the water.</p></div></div>
+                <div class="faq-item"><div class="faq-question">Are there restrictions on motors?</div><div class="faq-answer"><p>No, as long as your motor and entire power system comply with the 12V maximum electrical guideline.</p></div></div>
+                <div class="faq-item"><div class="faq-question">Can we cancel after registering?</div><div class="faq-answer"><p>It is not recommended as fees are non-refundable. For urgent cancellations, please notify organizers at least 3 weeks before the competition.</p></div></div>
+                <div class="faq-item"><div class="faq-question">Can a team have members from different age categories?</div><div class="faq-answer"><p>Yes, but the majority must be within the registered category. A minority of members (1-2) can be from a younger category, but not an older one.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container animate-on-scroll fade-in">
+            <div class="nav-brand">FFB 2025</div>
+            <p>Building the future of maritime robotics and safety innovation. Good luck to all teams!</p>
+        </div>
+    </footer>
+
+    <!-- Floating scroll to top button -->
+    <div class="floating-element" id="scrollToTop" onclick="scrollToTop()">
+        ↑
+    </div>
+
+    <script>
+        // Loading Animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Create Particle Background
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                
+                // Random colors for particles
+                const colors = ['#0066ff', '#ff6b35', '#00d084', '#8b5cf6'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Enhanced Scroll Effects
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+                scrollToTopBtn.style.opacity = '1';
+                scrollToTopBtn.style.transform = 'scale(1)';
+            } else {
+                navbar.classList.remove('scrolled');
+                scrollToTopBtn.style.opacity = '0';
+                scrollToTopBtn.style.transform = 'scale(0)';
+            }
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Enhanced FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isOpen = button.classList.contains('open');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-question.open').forEach(openButton => {
+                    if (openButton !== button) {
+                        openButton.classList.remove('open');
+                        openButton.nextElementSibling.style.maxHeight = '0';
+                    }
+                });
+                
+                // Toggle current FAQ
+                button.classList.toggle('open');
+                if (!isOpen) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = '0';
+                }
+            });
+        });
+
+        // Enhanced Active Nav Link on Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Enhanced Animate on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize particles when page loads
+        window.addEventListener('load', () => {
+            createParticles();
+        });
+
+        // Add hover effects to score badges
+        document.querySelectorAll('.points-badge').forEach(badge => {
+            badge.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1) rotate(2deg)';
+            });
+            
+            badge.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Add typing effect to hero title (optional enhancement)
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Enhanced card interactions
+        document.querySelectorAll('.structure-card, .prize-card, .sdg-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = this.style.transform.includes('scale') ? 
+                    this.style.transform : 
+                    'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add parallax effect to hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+    </script>
+</body>
+</html>
