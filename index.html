@@ -26,6 +26,8 @@
             --slate-800: #1e293b;
             --white: #ffffff;
             --red-500: #ef4444;
+            --red-800: #991b1b;
+            --red-900: #7f1d1d;
             --yellow-400: #fbbf24;
             
             /* Enhanced shadows */
@@ -784,7 +786,7 @@
         }
         
         .points-badge.disqualified {
-            background: linear-gradient(135deg, var(--slate-800), var(--slate-900));
+            background: linear-gradient(135deg, var(--red-800), var(--red-900));
             text-transform: uppercase;
         }
 
@@ -1257,17 +1259,15 @@
     </style>
 </head>
 <body>
-    <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loader"></div>
     </div>
 
-    <!-- Particle Background -->
     <div class="particles" id="particles"></div>
 
     <header class="hero">
         <div class="hero-content">
-            <h1 class="animate-on-scroll fade-in">FFB 2025 <span>Rule Book</span></h1>
+            <h1 class="animate-on-scroll fade-in">Fire Fighting Boats 2nd Edition 2025 <span>Rule Book</span></h1>
             <p class="subtitle animate-on-scroll fade-in" style="animation-delay: 0.3s;">The complete professional guide for the Fire Fighting Boats Competition. All rules, scoring, and specifications in one place.</p>
         </div>
     </header>
@@ -1304,15 +1304,7 @@
                 </div>
             </div>
             <div class="intro-grid" style="margin-top: 100px;">
-                <div class="definitions-card animate-on-scroll slide-in-left">
-                    <h3>Official Terminology</h3>
-                    <p><strong>Individual Team:</strong> A team not affiliated with an academy (e.g., school teams, independent groups).</p>
-                    <p><strong>Manual Adjustment:</strong> Physically correcting the robot by hand during a trial.</p>
-                    <p><strong>Rescue:</strong> Recovering floating objects according to category-specific rules.</p>
-                    <p><strong>Incomplete Extinguishing:</strong> When a doused flame re-ignites.</p>
-                    <p><strong>Precise Targeting:</strong> Hitting the target within the specified diameter.</p>
-                </div>
-                 <div class="text-content animate-on-scroll slide-in-right">
+                 <div class="text-content animate-on-scroll slide-in-left">
                     <h3>Vision & Global Impact</h3>
                     <p>More than a competition, this is a platform to inspire innovators. We foster skills in marine safety, fire mitigation, and environmental responsibility, aligning with key UN Sustainable Development Goals (SDGs).</p>
                     <div class="sdg-grid">
@@ -1320,6 +1312,14 @@
                         <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;"><div class="sdg-icon">💨</div><div class="sdg-title">SDG 13: Climate Action</div></div>
                         <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.3s;"><div class="sdg-icon">🌊</div><div class="sdg-title">SDG 14: Life Below Water</div></div>
                     </div>
+                </div>
+                <div class="definitions-card animate-on-scroll slide-in-right">
+                    <h3>Official Terminology</h3>
+                    <p><strong>Individual Team:</strong> A team not affiliated with an academy (e.g., school teams, independent groups).</p>
+                    <p><strong>Manual Adjustment:</strong> Physically correcting the robot by hand during a trial.</p>
+                    <p><strong>Rescue:</strong> Recovering floating objects according to category-specific rules.</p>
+                    <p><strong>Incomplete Extinguishing:</strong> When a doused flame re-ignites.</p>
+                    <p><strong>Precise Targeting:</strong> Hitting the target within the specified diameter.</p>
                 </div>
             </div>
         </div>
@@ -1344,10 +1344,10 @@
                 <div class="structure-card animate-on-scroll slide-in-right">
                      <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h3a1 1 0 0 1 1 1v1"/><path d="M19 9h1a1 1 0 0 1 1 1v3"/><path d="M19 15h.01"/><path d="M19 19h.01"/><path d="M15 20h.01"/><path d="M12 20h.01"/><path d="M9 20h.01"/><path d="M5 20h.01"/><path d="M5 16h.01"/><path d="M5 12h.01"/><path d="M5 8h.01"/><path d="M9 4h.01"/><path d="M12 4h.01"/><path d="m5 4 1-1"/><path d="m19 20-1-1"/><path d="m5 20 1-1"/><path d="m19 4-1-1"/><path d="M9 8h6v6H9z"/></svg>Procedures</h3>
                      <ul>
-                        <li><strong>Registration:</strong> Individuals (3-5 members) and Academies can register. Academy teams must have a dedicated supervisor present.</li>
-                        <li><strong>Testing:</strong> Teams get access to a testing arena after inspection. A 5-minute calibration period is provided before each official trial.</li>
-                        <li><strong>Inspection:</strong> Verifies all constraints and team knowledge. An official ID sticker is applied, which is mandatory for competition. No coaches allowed.</li>
-                    </ul>
+                         <li><strong>Registration:</strong> Academies can register one or more teams of 3-5 members. Individual teams not affiliated with an academy are also welcome to register. Academy-registered teams must have a dedicated supervisor present.</li>
+                         <li><strong>Testing:</strong> Teams get access to a testing arena after inspection. A 5-minute calibration period is provided before each official trial.</li>
+                         <li><strong>Inspection:</strong> Verifies all constraints and team knowledge. An official ID sticker is applied, which is mandatory for competition. No coaches allowed.</li>
+                     </ul>
                 </div>
             </div>
         </div>
@@ -1399,7 +1399,6 @@
                             <table class="scoring-table">
                                 <thead><tr><th>Mission / Bonus</th><th style="text-align: right;">Points</th></tr></thead>
                                 <tbody>
-                                    <!-- <tr><td>Navigate to fire location</td><td align="right"><span class="points-badge mission">100</span></td></tr> -->
                                     <tr><td>Extinguish flame completely</td><td align="right"><span class="points-badge mission">200</span></td></tr>
                                     <tr><td>Return to start position</td><td align="right"><span class="points-badge mission">50</span></td></tr>
                                     <tr><td>Rescue Mission (Tap 2 items)</td><td align="right"><span class="points-badge mission">20 / item</span></td></tr>
@@ -1415,15 +1414,16 @@
                              <table class="scoring-table">
                                  <thead><tr><th>Infraction</th><th style="text-align: right;">Penalty</th></tr></thead>
                                  <tbody>
-                                    <tr><td>Wall collision (from 3rd+)</td><td align="right"><span class="points-badge penalty">-10</span></td></tr>
-                                    <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
-                                    <tr><td>Splashing other teams</td><td align="right"><span class="points-badge penalty">-25</span></td></tr>
-                                    <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-100</span></td></tr>
-                                    <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-20</span></td></tr>
-                                    <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-50 to -100</span></td></tr>
-                                    <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
+                                     <tr><td>Wall collision (from 3rd+)</td><td align="right"><span class="points-badge penalty">-10</span></td></tr>
+                                     <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
+                                     <tr><td>Splashing other teams</td><td align="right"><span class="points-badge penalty">-25</span></td></tr>
+                                     <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-100</span></td></tr>
+                                     <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-20</span></td></tr>
+                                     <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-50 to -100</span></td></tr>
+                                     <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
                                  </tbody>
                              </table>
+                             <img src="img4.jpg" alt="Competition arena for the Junior category" class="section-image animate-on-scroll zoom-in" />
                         </div>
                     </div>
                 </article>
@@ -1443,8 +1443,7 @@
                             <table class="scoring-table">
                                 <thead><tr><th>Mission / Bonus</th><th style="text-align: right;">Points</th></tr></thead>
                                 <tbody>
-                                    <!-- <tr><td>Navigate to fire location</td><td align="right"><span class="points-badge mission">100</span></td></tr> -->
-                                    <tr><td>Extinguish flames (2)</td><td align="right"><span class="points-badge mission">150 / candle</span></td></tr>
+                                    <tr><td>Extinguish flames (2)</td><td align="right"><span class="points-badge mission">150 per candle</span></td></tr>
                                     <tr><td>Return to start position</td><td align="right"><span class="points-badge mission">75</span></td></tr>
                                     <tr><td>Rescue (Push/Pull 3 items)</td><td align="right"><span class="points-badge mission">20 / item</span></td></tr>
                                     <tr><td>Complete under 3 mins</td><td align="right"><span class="points-badge bonus">+150</span></td></tr>
@@ -1460,16 +1459,16 @@
                              <table class="scoring-table">
                                  <thead><tr><th>Infraction</th><th style="text-align: right;">Penalty</th></tr></thead>
                                  <tbody>
-                                    <tr><td>Wall collision</td><td align="right"><span class="points-badge penalty">-15</span></td></tr>
-                                    <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
-                                    <tr><td>Incomplete flame extinguishing</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
-                                    <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-150</span></td></tr>
-                                    <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-30</span></td></tr>
-                                    <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-75 to -150</span></td></tr>
-                                    <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
+                                     <tr><td>Wall collision</td><td align="right"><span class="points-badge penalty">-15</span></td></tr>
+                                     <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
+                                     <tr><td>Incomplete flame extinguishing</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
+                                     <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-150</span></td></tr>
+                                     <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-30</span></td></tr>
+                                     <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-75 to -150</span></td></tr>
+                                     <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
                                  </tbody>
                              </table>
-                             <img src="img3.jpg" alt="A fire fighting boat in the competition pool" class="section-image animate-on-scroll zoom-in" />
+                             <img src="img5.png" alt="A fire fighting boat in the competition pool" class="section-image animate-on-scroll zoom-in" />
                         </div>
                     </div>
                 </article>
@@ -1489,8 +1488,7 @@
                             <table class="scoring-table">
                                 <thead><tr><th>Mission / Bonus</th><th style="text-align: right;">Points</th></tr></thead>
                                 <tbody>
-                                    <!-- <tr><td>Navigate to fire location</td><td align="right"><span class="points-badge mission">150</span></td></tr> -->
-                                    <tr><td>Extinguish flames (up to 5)</td><td align="right"><span class="points-badge mission">150 / candle</span></td></tr>
+                                    <tr><td>Extinguish flames (up to 5)</td><td align="right"><span class="points-badge mission">150 per candle</span></td></tr>
                                     <tr><td>Return to start position</td><td align="right"><span class="points-badge mission">100</span></td></tr>
                                     <tr><td>Pick up rescue items (5)</td><td align="right"><span class="points-badge mission">20 / item</span></td></tr>
                                     <tr><td>Transport items to rescue zone</td><td align="right"><span class="points-badge mission">30 / item</span></td></tr>
@@ -1508,17 +1506,18 @@
                              <table class="scoring-table">
                                  <thead><tr><th>Infraction</th><th style="text-align: right;">Penalty</th></tr></thead>
                                  <tbody>
-                                    <tr><td>Wall / Obstacle collision</td><td align="right"><span class="points-badge penalty">-20 / -25</span></td></tr>
-                                    <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
-                                    <tr><td>Incomplete flame extinguishing</td><td align="right"><span class="points-badge penalty">-100</span></td></tr>
-                                    <tr><td>Dropping a rescue item</td><td align="right"><span class="points-badge penalty">-25</span></td></tr>
-                                    <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-40</span></td></tr>
-                                    <tr><td>Failed rescue pickup/placement</td><td align="right"><span class="points-badge penalty">-10 / -20</span></td></tr>
-                                    <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-200</span></td></tr>
-                                    <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-100 to -200</span></td></tr>
-                                    <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
+                                     <tr><td>Wall / Obstacle collision</td><td align="right"><span class="points-badge penalty">-20 / -25</span></td></tr>
+                                     <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
+                                     <tr><td>Incomplete flame extinguishing</td><td align="right"><span class="points-badge penalty">-100</span></td></tr>
+                                     <tr><td>Dropping a rescue item</td><td align="right"><span class="points-badge penalty">-25</span></td></tr>
+                                     <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-40</span></td></tr>
+                                     <tr><td>Failed rescue pickup/placement</td><td align="right"><span class="points-badge penalty">-10 / -20</span></td></tr>
+                                     <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-200</span></td></tr>
+                                     <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-100 to -200</span></td></tr>
+                                     <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
                                  </tbody>
                              </table>
+                              <img src="img6.png" alt="Competition arena for the Senior category" class="section-image animate-on-scroll zoom-in" />
                         </div>
                     </div>
                 </article>
@@ -1551,7 +1550,13 @@
              <div class="structure-grid">
                 <div class="structure-card animate-on-scroll zoom-in"><h3>🤝 Team Interactions</h3><p>Respect other teams' space, equipment, and efforts. Sabotage or verbal misconduct is grounds for immediate disqualification. Collaboration is encouraged. Photographing or recording another team's robot during their trial is strictly forbidden.</p></div>
                 <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;"><h3>🧑‍⚖️ Officials & Judging</h3><p>All communication with judges and staff must be polite. Only designated team spokespersons may approach judges. Arguments are not tolerated. All judges' decisions are final.</p></div>
-                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.4s;"><h3>📜 Infraction Policy</h3><p>Unsportsmanlike conduct will be handled via a three-step system: 1st Infraction is a verbal warning; 2nd is a -25 point deduction; 3rd results in disqualification.</p></div>
+                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.4s;"><h3>📜 Infraction Policy</h3>
+                    <ul>
+                        <li><strong>1st Infraction:</strong> A formal verbal warning.</li>
+                        <li><strong>2nd Infraction:</strong> A -25 point deduction from the team's score.</li>
+                        <li><strong>3rd Infraction:</strong> Immediate disqualification from the round and/or competition.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -1616,7 +1621,6 @@
         </div>
     </footer>
 
-    <!-- Floating scroll to top button -->
     <div class="floating-element" id="scrollToTop" onclick="scrollToTop()">
         ↑
     </div>
