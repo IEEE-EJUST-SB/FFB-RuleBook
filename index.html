@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FFB 2025 Rule Book - Professional Edition</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary-blue: #0066ff;
@@ -29,7 +32,7 @@
             --red-800: #991b1b;
             --red-900: #7f1d1d;
             --yellow-400: #fbbf24;
-            
+
             /* Enhanced shadows */
             --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -64,21 +67,27 @@
             opacity: 0;
             transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .animate-on-scroll.fade-in { 
+
+        .animate-on-scroll.fade-in {
             transform: translateY(30px);
         }
-        .animate-on-scroll.slide-in-left { 
+
+        .animate-on-scroll.slide-in-left {
             transform: translateX(-50px);
         }
-        .animate-on-scroll.slide-in-right { 
+
+        .animate-on-scroll.slide-in-right {
             transform: translateX(50px);
         }
-        .animate-on-scroll.zoom-in { 
+
+        .animate-on-scroll.zoom-in {
             transform: scale(0.9);
         }
-        .animate-on-scroll.rotate-in { 
+
+        .animate-on-scroll.rotate-in {
             transform: rotate(-5deg) scale(0.95);
         }
+
         .animate-on-scroll.is-visible {
             opacity: 1;
             transform: translate(0, 0) scale(1) rotate(0deg);
@@ -86,13 +95,27 @@
 
         /* Floating animations */
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 255, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(0, 102, 255, 0.6); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(0, 102, 255, 0.6);
+            }
         }
 
         /* Global Components */
@@ -101,13 +124,13 @@
             margin: 0 auto;
             padding: 0 24px;
         }
-        
+
         .section {
             padding: 120px 0;
             position: relative;
             overflow: hidden;
         }
-        
+
         .section::before {
             content: '';
             position: absolute;
@@ -119,11 +142,11 @@
             animation: float 20s ease-in-out infinite;
             pointer-events: none;
         }
-        
+
         .section:nth-of-type(even) {
             background: var(--white);
         }
-        
+
         .section:nth-of-type(even)::before {
             background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.02) 0%, transparent 70%);
             animation-delay: -10s;
@@ -135,7 +158,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .section-header h2 {
             font-size: 3.5rem;
             font-weight: 900;
@@ -146,7 +169,7 @@
             margin-bottom: 1.5rem;
             position: relative;
         }
-        
+
         .section-header h2::after {
             content: '';
             position: absolute;
@@ -158,7 +181,7 @@
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange));
             border-radius: 2px;
         }
-        
+
         .section-header p {
             font-size: 1.2rem;
             color: var(--slate-600);
@@ -180,7 +203,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -188,33 +211,37 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 20%, rgba(0, 102, 255, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 40% 60%, rgba(139, 92, 246, 0.2) 0%, transparent 50%);
             animation: pulse-bg 15s ease-in-out infinite;
         }
-        
+
         @keyframes pulse-bg {
-            0%, 100% { 
-                opacity: 0.8; 
-                transform: scale(1) rotate(0deg); 
+
+            0%,
+            100% {
+                opacity: 0.8;
+                transform: scale(1) rotate(0deg);
             }
-            33% { 
-                opacity: 1; 
-                transform: scale(1.1) rotate(1deg); 
+
+            33% {
+                opacity: 1;
+                transform: scale(1.1) rotate(1deg);
             }
-            66% { 
-                opacity: 0.9; 
-                transform: scale(1.05) rotate(-1deg); 
+
+            66% {
+                opacity: 0.9;
+                transform: scale(1.05) rotate(-1deg);
             }
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 2;
         }
-        
+
         .hero h1 {
             font-size: 5.5rem;
             font-weight: 900;
@@ -222,7 +249,7 @@
             margin-bottom: 2rem;
             line-height: 1.1;
         }
-        
+
         .hero h1 span {
             background: linear-gradient(135deg, var(--white) 0%, var(--primary-blue) 50%, var(--secondary-orange) 100%);
             -webkit-background-clip: text;
@@ -230,7 +257,7 @@
             background-clip: text;
             animation: pulse-glow 3s ease-in-out infinite;
         }
-        
+
         .hero .subtitle {
             font-size: 1.6rem;
             color: var(--slate-200);
@@ -255,35 +282,35 @@
             border-bottom: 1px solid var(--slate-200);
             transition: all 0.3s ease;
         }
-        
+
         .nav.scrolled {
             background: rgba(255, 255, 255, 0.95);
             padding: 0.8rem 1.5rem;
         }
-        
-        .nav-container { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
-        .nav-brand { 
-            font-weight: 800; 
-            font-size: 1.4rem; 
+
+        .nav-brand {
+            font-weight: 800;
+            font-size: 1.4rem;
             background: linear-gradient(135deg, var(--navy-900), var(--primary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        .nav-links { 
-            display: flex; 
-            gap: 0.5rem; 
-            list-style: none; 
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
         }
-        
+
         .nav-links a {
             text-decoration: none;
             color: var(--slate-600);
@@ -295,7 +322,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .nav-links a::before {
             content: '';
             position: absolute;
@@ -307,14 +334,14 @@
             transition: left 0.3s ease;
             z-index: -1;
         }
-        
+
         .nav-links a:hover::before,
         .nav-links a.active::before {
             left: 0;
         }
-        
+
         .nav-links a:hover,
-        .nav-links a.active { 
+        .nav-links a.active {
             color: var(--black);
             transform: translateY(-2px);
         }
@@ -328,30 +355,30 @@
             position: relative;
             z-index: 2;
         }
-        
-        .intro-grid .text-content h3 { 
-            font-size: 2.2rem; 
+
+        .intro-grid .text-content h3 {
+            font-size: 2.2rem;
             background: linear-gradient(135deg, var(--navy-900), var(--primary-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 1.5rem; 
+            margin-bottom: 1.5rem;
             font-weight: 700;
         }
-        
-        .intro-grid .text-content p { 
-            color: var(--slate-600); 
+
+        .intro-grid .text-content p {
+            color: var(--slate-600);
             font-size: 1.1rem;
             line-height: 1.8;
         }
-        
+
         .sdg-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
             margin-top: 2.5rem;
         }
-        
+
         .sdg-card {
             background: var(--white);
             padding: 2rem;
@@ -363,7 +390,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .sdg-card::before {
             content: '';
             position: absolute;
@@ -375,30 +402,30 @@
             transition: left 0.3s ease;
             z-index: 0;
         }
-        
+
         .sdg-card:hover::before {
             left: 0;
         }
-        
+
         .sdg-card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: var(--shadow-xl);
         }
-        
-        .sdg-card .sdg-icon { 
-            font-size: 3rem; 
+
+        .sdg-card .sdg-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
         }
-        
-        .sdg-card .sdg-title { 
-            font-weight: 700; 
+
+        .sdg-card .sdg-title {
+            font-weight: 700;
             color: var(--navy-900);
             position: relative;
             z-index: 1;
         }
-        
+
         .definitions-card {
             background: var(--white);
             padding: 3rem;
@@ -407,7 +434,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .definitions-card::before {
             content: '';
             position: absolute;
@@ -417,28 +444,28 @@
             height: 6px;
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange), var(--accent-purple));
         }
-        
-        .definitions-card h3 { 
-            text-align: center; 
+
+        .definitions-card h3 {
+            text-align: center;
             margin-bottom: 2.5rem;
             font-size: 1.8rem;
             color: var(--navy-900);
         }
-        
-        .definitions-card p { 
-            border-left: 4px solid var(--primary-blue); 
-            padding-left: 1.5rem; 
+
+        .definitions-card p {
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 1.5rem;
             margin-bottom: 1.5rem;
             position: relative;
             transition: all 0.3s ease;
         }
-        
+
         .definitions-card p:hover {
             border-left-color: var(--secondary-orange);
             transform: translateX(8px);
         }
-        
-        .definitions-card p strong { 
+
+        .definitions-card p strong {
             color: var(--navy-900);
             font-weight: 700;
         }
@@ -452,7 +479,7 @@
             margin: 100px 0;
             z-index: 2;
         }
-        
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -464,18 +491,18 @@
             transform: translateY(-50%);
             border-radius: 2px;
         }
-        
+
         .timeline-item {
             text-align: center;
             z-index: 1;
             flex: 1;
             transition: all 0.3s ease;
         }
-        
+
         .timeline-item:hover {
             transform: translateY(-5px);
         }
-        
+
         .timeline-item .icon {
             width: 70px;
             height: 70px;
@@ -490,20 +517,20 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: var(--shadow-md);
         }
-        
+
         .timeline-item:hover .icon {
             transform: scale(1.2) rotate(15deg);
             border-color: var(--secondary-orange);
             box-shadow: var(--shadow-xl);
         }
-        
+
         .timeline-item .date {
             font-weight: 800;
             color: var(--navy-900);
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
-        
+
         .timeline-item .event {
             color: var(--slate-600);
             font-size: 0.95rem;
@@ -518,7 +545,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .structure-card {
             background: var(--white);
             padding: 3rem;
@@ -530,7 +557,7 @@
             border-top: 6px solid transparent;
             background-clip: padding-box;
         }
-        
+
         .structure-card::before {
             content: '';
             position: absolute;
@@ -540,12 +567,12 @@
             height: 6px;
             background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange));
         }
-        
+
         .structure-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: var(--shadow-xl);
         }
-        
+
         .structure-card h3 {
             display: flex;
             align-items: center;
@@ -555,22 +582,22 @@
             margin-bottom: 1.5rem;
             font-weight: 700;
         }
-        
+
         .structure-card h3 svg {
             color: var(--primary-blue);
             transition: all 0.3s ease;
         }
-        
+
         .structure-card:hover h3 svg {
             color: var(--secondary-orange);
             transform: scale(1.1);
         }
-        
+
         .structure-card ul {
             list-style: none;
             padding-left: 0;
         }
-        
+
         .structure-card li {
             padding-left: 2rem;
             position: relative;
@@ -579,7 +606,7 @@
             line-height: 1.6;
             transition: all 0.3s ease;
         }
-        
+
         .structure-card li::before {
             content: '▶';
             position: absolute;
@@ -588,7 +615,7 @@
             font-weight: 700;
             transition: all 0.3s ease;
         }
-        
+
         .structure-card:hover li::before {
             color: var(--secondary-orange);
             transform: scale(1.2);
@@ -601,7 +628,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .category-card {
             background: var(--white);
             border-radius: 24px;
@@ -611,7 +638,7 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
-        
+
         .category-card::before {
             content: '';
             position: absolute;
@@ -623,47 +650,47 @@
             transition: left 0.6s ease;
             z-index: 1;
         }
-        
+
         .category-card:hover::before {
             left: 100%;
         }
-        
+
         .category-card:hover {
             transform: translateY(-8px) scale(1.01);
         }
-        
+
         .category-card.junior {
             border-color: var(--accent-green);
         }
-        
+
         .category-card.intermediate {
             border-color: var(--secondary-orange);
         }
-        
+
         .category-card.senior {
             border-color: var(--accent-purple);
         }
-        
+
         .category-header {
             padding: 3.5rem;
             text-align: center;
             position: relative;
             z-index: 2;
         }
-        
+
         .category-header .title {
             font-size: 2.8rem;
             font-weight: 900;
             color: var(--navy-900);
             margin-bottom: 0.5rem;
         }
-        
+
         .category-header .age {
             font-weight: 600;
             color: var(--slate-600);
             font-size: 1.1rem;
         }
-        
+
         .category-content-wrapper {
             background: linear-gradient(135deg, var(--slate-50), var(--slate-100));
             padding: 3.5rem;
@@ -685,7 +712,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .max-score-card::before {
             content: '';
             position: absolute;
@@ -696,12 +723,17 @@
             background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
             animation: rotate 10s linear infinite;
         }
-        
+
         @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .max-score-card .label {
             font-size: 1.3rem;
             font-weight: 600;
@@ -709,7 +741,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .max-score-card .score {
             font-size: 4.5rem;
             font-weight: 900;
@@ -729,7 +761,7 @@
             overflow: hidden;
             box-shadow: var(--shadow-sm);
         }
-        
+
         .scoring-table th {
             text-align: left;
             padding: 1rem;
@@ -740,22 +772,22 @@
             font-weight: 700;
             letter-spacing: 0.5px;
         }
-        
+
         .scoring-table td {
             padding: 1rem;
             border-bottom: 1px solid var(--slate-200);
             vertical-align: middle;
             transition: all 0.3s ease;
         }
-        
+
         .scoring-table tr:hover td {
             background-color: var(--slate-50);
         }
-        
+
         .scoring-table tr:last-child td {
             border-bottom: none;
         }
-        
+
         .points-badge {
             display: inline-block;
             padding: 0.4rem 1rem;
@@ -767,24 +799,24 @@
             box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
         }
-        
+
         .points-badge:hover {
             transform: scale(1.05);
             box-shadow: var(--shadow-md);
         }
-        
+
         .points-badge.mission {
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
         }
-        
+
         .points-badge.bonus {
             background: linear-gradient(135deg, var(--accent-green), #00a86b);
         }
-        
+
         .points-badge.penalty {
             background: linear-gradient(135deg, var(--red-500), #dc2626);
         }
-        
+
         .points-badge.disqualified {
             background: linear-gradient(135deg, var(--red-800), var(--red-900));
             text-transform: uppercase;
@@ -795,7 +827,7 @@
             margin-bottom: 80px;
             position: relative;
         }
-        
+
         .prize-category-header {
             font-size: 2.4rem;
             font-weight: 800;
@@ -803,7 +835,7 @@
             margin-bottom: 40px;
             position: relative;
         }
-        
+
         .prize-category-header::after {
             content: '';
             position: absolute;
@@ -814,31 +846,31 @@
             height: 4px;
             border-radius: 2px;
         }
-        
+
         .prize-category-header.junior-color {
             color: var(--accent-green);
         }
-        
+
         .prize-category-header.junior-color::after {
             background: var(--accent-green);
         }
-        
+
         .prize-category-header.intermediate-color {
             color: var(--secondary-orange);
         }
-        
+
         .prize-category-header.intermediate-color::after {
             background: var(--secondary-orange);
         }
-        
+
         .prize-category-header.senior-color {
             color: var(--accent-purple);
         }
-        
+
         .prize-category-header.senior-color::after {
             background: var(--accent-purple);
         }
-        
+
         .prize-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -856,7 +888,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .prize-card::before {
             content: '';
             position: absolute;
@@ -867,35 +899,35 @@
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
             transition: top 0.6s ease;
         }
-        
+
         .prize-card:hover::before {
             top: 100%;
         }
-        
+
         .prize-card:hover {
             transform: translateY(-15px) scale(1.03);
             box-shadow: var(--shadow-xl);
         }
-        
+
         .prize-card.first {
             border-color: #ffd700;
         }
-        
+
         .prize-card.second {
             border-color: #c0c0c0;
         }
-        
+
         .prize-card.third {
             border-color: #cd7f32;
         }
-        
+
         .prize-card h3 {
             font-size: 1.6rem;
             margin: 1rem 0 1rem;
             font-weight: 700;
             color: var(--navy-900);
         }
-        
+
         .prize-card .amount {
             font-size: 2.8rem;
             font-weight: 900;
@@ -915,12 +947,12 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--slate-200);
         }
-        
+
         .faq-item:hover {
             box-shadow: var(--shadow-lg);
             transform: translateY(-2px);
         }
-        
+
         .faq-question {
             background: var(--white);
             padding: 1.5rem 2rem;
@@ -934,7 +966,7 @@
             color: var(--navy-900);
             position: relative;
         }
-        
+
         .faq-question::after {
             content: '+';
             font-size: 1.5rem;
@@ -942,16 +974,16 @@
             color: var(--primary-blue);
             transition: all 0.3s ease;
         }
-        
+
         .faq-question.open::after {
             transform: rotate(45deg);
             color: var(--secondary-orange);
         }
-        
+
         .faq-question:hover {
             background: linear-gradient(135deg, var(--slate-50), var(--slate-100));
         }
-        
+
         .faq-answer {
             padding: 0 2rem;
             max-height: 0;
@@ -959,7 +991,7 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: var(--slate-50);
         }
-        
+
         .faq-answer p {
             padding: 1.5rem 0;
             border-top: 1px solid var(--slate-200);
@@ -967,7 +999,7 @@
             line-height: 1.7;
             font-size: 1rem;
         }
-        
+
         .faq-question.open {
             background: linear-gradient(135deg, var(--slate-50), var(--slate-100));
         }
@@ -981,7 +1013,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         footer::before {
             content: '';
             position: absolute;
@@ -989,19 +1021,19 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 70% 70%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
             animation: pulse-bg 20s ease-in-out infinite;
         }
-        
+
         footer .nav-brand {
             font-size: 2rem;
             margin-bottom: 1rem;
             position: relative;
             z-index: 2;
         }
-        
+
         footer p {
             margin-top: 1.5rem;
             color: var(--slate-400);
@@ -1021,7 +1053,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .section-image:hover {
             transform: scale(1.05) rotate(1deg);
             box-shadow: var(--shadow-glow);
@@ -1047,7 +1079,7 @@
             z-index: 999;
             animation: float 3s ease-in-out infinite;
         }
-        
+
         .floating-element:hover {
             transform: scale(1.1);
             box-shadow: var(--shadow-glow);
@@ -1063,7 +1095,7 @@
             pointer-events: none;
             z-index: 0;
         }
-        
+
         .particle {
             position: absolute;
             width: 4px;
@@ -1073,18 +1105,21 @@
             opacity: 0.3;
             animation: particle-float 15s infinite linear;
         }
-        
+
         @keyframes particle-float {
             0% {
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
+
             10% {
                 opacity: 0.3;
             }
+
             90% {
                 opacity: 0.3;
             }
+
             100% {
                 transform: translateY(-100px) rotate(360deg);
                 opacity: 0;
@@ -1106,12 +1141,12 @@
             opacity: 1;
             transition: opacity 0.5s ease;
         }
-        
+
         .loading-overlay.hidden {
             opacity: 0;
             pointer-events: none;
         }
-        
+
         .loader {
             width: 60px;
             height: 60px;
@@ -1120,18 +1155,35 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .hero h1 { font-size: 4rem; }
-            .section-header h2 { font-size: 2.8rem; }
-            .intro-grid { grid-template-columns: 1fr; gap: 40px; }
-            .category-content-wrapper { grid-template-columns: 1fr; }
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.8rem;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .category-content-wrapper {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1139,78 +1191,79 @@
                 padding: 100px 24px;
                 min-height: 80vh;
             }
-            
-            .hero h1 { 
+
+            .hero h1 {
                 font-size: 3.2rem;
                 letter-spacing: -1px;
             }
-            
-            .hero .subtitle { 
-                font-size: 1.3rem; 
+
+            .hero .subtitle {
+                font-size: 1.3rem;
                 margin-bottom: 2rem;
             }
-            
-            .nav-links { 
-                display: none; 
+
+            .nav-links {
+                display: none;
             }
-            
-            .section-header h2 { 
-                font-size: 2.2rem; 
+
+            .section-header h2 {
+                font-size: 2.2rem;
             }
-            
+
             .section {
                 padding: 120px 0;
                 position: relative;
                 overflow: visible;
             }
+
             .section#introduction {
                 padding-top: 60px;
                 margin-top: 40px;
             }
-            
-            .intro-grid .image-content { 
+
+            .intro-grid .image-content {
                 order: -1;
             }
-            
-            .timeline { 
-                flex-direction: column; 
-                gap: 40px; 
+
+            .timeline {
+                flex-direction: column;
+                gap: 40px;
                 align-items: center;
             }
-            
-            .timeline::before { 
+
+            .timeline::before {
                 display: none;
             }
-            
+
             .timeline-item .icon {
                 width: 60px;
                 height: 60px;
             }
-            
+
             .structure-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
+
             .structure-card,
             .definitions-card {
                 padding: 2rem;
             }
-            
+
             .category-header {
                 padding: 2.5rem;
             }
-            
+
             .category-content-wrapper {
                 padding: 2.5rem;
                 gap: 2rem;
             }
-            
+
             .prize-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
+
             .floating-element {
                 bottom: 20px;
                 right: 20px;
@@ -1224,40 +1277,918 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .section-header h2 {
                 font-size: 1.8rem;
             }
-            
+
             .nav {
                 padding: 1rem;
             }
-            
+
             .container {
                 padding: 0 16px;
             }
-            
+
             .structure-card,
             .definitions-card {
                 padding: 1.5rem;
             }
-            
+
             .scoring-table th,
             .scoring-table td {
                 padding: 0.75rem 0.5rem;
                 font-size: 0.85rem;
             }
-            
+
             .max-score-card {
                 padding: 2rem;
             }
-            
+
             .max-score-card .score {
                 font-size: 3.5rem;
             }
         }
+            /* Overview Section */
+    .overview-content {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .overview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .overview-card {
+        background: var(--white);
+        padding: 2.5rem;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: var(--shadow-md);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid transparent;
+    }
+
+    .overview-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--primary-blue);
+    }
+
+    .overview-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    .overview-card:hover .overview-icon {
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    .overview-card h3 {
+        font-size: 1.4rem;
+        color: var(--navy-900);
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .overview-card p {
+        color: var(--slate-600);
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    /* CTA Buttons */
+    .cta-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 40px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow-lg);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+
+    .cta-button:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .cta-button span,
+    .cta-button svg {
+        position: relative;
+        z-index: 1;
+    }
+
+    .primary-cta {
+        background: linear-gradient(135deg, var(--primary-blue), #0052cc);
+        color: var(--white);
+    }
+
+    .primary-cta:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 102, 255, 0.4);
+    }
+
+    .secondary-cta {
+        background: linear-gradient(135deg, var(--secondary-orange), #ff5722);
+        color: var(--white);
+    }
+
+    .secondary-cta:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
+    }
+
+    /* Poster Competition */
+    .poster-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .poster-info-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 3.5rem;
+        box-shadow: var(--shadow-xl);
+    }
+
+    .poster-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .poster-icon {
+        font-size: 4rem;
+    }
+
+    .poster-header h3 {
+        font-size: 2.2rem;
+        color: var(--navy-900);
+        font-weight: 800;
+    }
+
+    .poster-info-card > p {
+        color: var(--slate-600);
+        line-height: 1.8;
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .poster-requirements,
+    .poster-judging,
+    .poster-prizes {
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+        border-top: 2px solid var(--slate-200);
+    }
+
+    .poster-requirements h4,
+    .poster-judging h4,
+    .poster-prizes h4 {
+        font-size: 1.5rem;
+        color: var(--navy-900);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+    }
+
+    .poster-requirements ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .poster-requirements li {
+        padding: 0.75rem 0;
+        color: var(--slate-600);
+        line-height: 1.6;
+        padding-left: 2rem;
+        position: relative;
+    }
+
+    .poster-requirements li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--accent-green);
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .criteria-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+        margin-top: 1.5rem;
+    }
+
+    .criteria-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, var(--slate-50), var(--slate-100));
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .criteria-item:hover {
+        transform: translateY(-5px);
+        background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+    }
+
+    .criteria-item:hover .criteria-score,
+    .criteria-item:hover .criteria-label {
+        color: var(--white);
+    }
+
+    .criteria-score {
+        display: block;
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--primary-blue);
+        margin-bottom: 0.5rem;
+    }
+
+    .criteria-label {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--slate-600);
+        font-weight: 600;
+    }
+
+    .poster-prize-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 25px;
+        margin-top: 1.5rem;
+    }
+
+    .poster-prize-item {
+        text-align: center;
+        padding: 2rem;
+        background: var(--slate-50);
+        border-radius: 16px;
+        transition: all 0.4s ease;
+        border: 2px solid transparent;
+    }
+
+    .poster-prize-item:hover {
+        transform: translateY(-8px) scale(1.05);
+        border-color: var(--primary-blue);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .prize-medal {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .poster-prize-item .prize-amount {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--navy-900);
+        margin-bottom: 0.5rem;
+    }
+
+    .prize-place {
+        color: var(--slate-600);
+        font-weight: 600;
+    }
+
+    /* Sponsors Section */
+    .sponsor-tier-section {
+        margin-bottom: 80px;
+    }
+
+    .sponsor-tier-title {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--navy-900);
+        margin-bottom: 3rem;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .sponsor-tier-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(135deg, var(--primary-blue), var(--secondary-orange));
+        border-radius: 2px;
+    }
+
+    /* Golden Sponsor */
+    .golden-sponsor-section {
+        margin-bottom: 100px;
+    }
+
+    .golden-sponsor-card {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        padding: 4rem;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .golden-sponsor-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 30px 80px rgba(255, 215, 0, 0.5);
+    }
+
+    .sponsor-logo-container {
+        flex-shrink: 0;
+    }
+
+    .sponsor-logo.golden {
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+        transition: transform 0.3s ease;
+    }
+
+    .golden-sponsor-card:hover .sponsor-logo.golden {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .sponsor-info h4 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: var(--navy-900);
+        margin-bottom: 1rem;
+    }
+
+    .sponsor-info p {
+        font-size: 1.2rem;
+        color: var(--navy-800);
+        line-height: 1.6;
+    }
+
+    /* Sponsor Grid */
+    .sponsor-grid {
+        display: grid;
+        gap: 40px;
+    }
+
+    .sponsor-grid.silver {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .sponsor-grid.bronze {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .sponsor-grid.partners {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+    }
+
+    .sponsor-card {
+        background: var(--white);
+        padding: 3rem;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: var(--shadow-md);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid var(--slate-200);
+    }
+
+    .sponsor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--primary-blue);
+    }
+
+    .sponsor-card.small {
+        padding: 2rem;
+    }
+
+    .sponsor-logo {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    .sponsor-card:hover .sponsor-logo {
+        transform: scale(1.1);
+    }
+
+    .sponsor-name {
+        margin-top: 1.5rem;
+        font-weight: 600;
+        color: var(--navy-900);
+        font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .golden-sponsor-card {
+            flex-direction: column;
+            text-align: center;
+            padding: 2.5rem;
+        }
+        
+        .sponsor-logo.golden {
+            width: 180px;
+            height: 180px;
+        }
+        
+        .sponsor-info h4 {
+            font-size: 1.8rem;
+        }
+        
+        .cta-container {
+            flex-direction: column;
+        }
+        
+        .cta-button {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .poster-info-card {
+            padding: 2rem;
+        }
+        
+        .criteria-grid,
+        .poster-prize-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    .award-image-container {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background: linear-gradient(135deg, var(--slate-50), var(--slate-100)); */
+        border-radius: 50%;
+        padding: 20px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .award-image-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(255, 107, 53, 0.1)); */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 50%;
+    }
+
+    .prize-card:hover .award-image-container::before {
+        opacity: 1;
+    }
+
+    .award-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        z-index: 1;
+        /* filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); */
+    }
+
+    .prize-card:hover .award-logo {
+        transform: scale(1.15) rotate(5deg);
+    }
+
+    /* Special Awards Grid */
+    .special-awards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 30px;
+        margin-top: 2.5rem;
+    }
+
+    .special-award-item {
+        text-align: center;
+        padding: 1.5rem;
+        /* background: linear-gradient(135deg, var(--slate-50), var(--white)); */
+        border-radius: 16px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid var(--slate-200);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .special-award-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        /* background: linear-gradient(135deg, rgba(0, 102, 255, 0.05), rgba(255, 107, 53, 0.05)); */
+        transition: left 0.4s ease;
+    }
+
+    .special-award-item:hover::before {
+        left: 0;
+    }
+
+    .special-award-item:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-blue);
+    }
+
+    .special-award-img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin: 0 auto 1rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /* filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); */
+        position: relative;
+        z-index: 1;
+    }
+
+    .special-award-item:hover .special-award-img {
+        transform: scale(1.2) rotate(-5deg);
+        filter: drop-shadow(0 8px 16px rgba(0, 102, 255, 0.3));
+    }
+
+    .special-award-item p {
+        font-weight: 600;
+        /* color: var(--navy-900); */
+        font-size: 0.95rem;
+        line-height: 1.4;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .award-image-container {
+            width: 100px;
+            height: 100px;
+            padding: 15px;
+        }
+        
+        .special-awards-grid {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+        }
+        
+        .special-award-img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .special-award-item {
+            padding: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .special-awards-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    /* Poster Tracks */
+    .poster-tracks {
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+        border-top: 2px solid var(--slate-200);
+    }
+
+    .poster-tracks h4 {
+        font-size: 1.5rem;
+        color: var(--navy-900);
+        margin-bottom: 2rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .tracks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 25px;
+        margin-top: 1.5rem;
+    }
+
+    .track-card {
+        background: linear-gradient(135deg, var(--slate-50), var(--white));
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+        border: 2px solid var(--slate-200);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .track-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0, 102, 255, 0.05), rgba(255, 107, 53, 0.05));
+        transition: left 0.4s ease;
+    }
+
+    .track-card:hover::before {
+        left: 0;
+    }
+
+    .track-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-blue);
+    }
+
+    .track-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .track-card:hover .track-icon {
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    .track-card h5 {
+        font-size: 1.1rem;
+        color: var(--primary-blue);
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+    }
+
+    .track-card p {
+        font-size: 0.95rem;
+        color: var(--slate-600);
+        line-height: 1.5;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Details Grid */
+    .details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+        margin-top: 1.5rem;
+    }
+
+    .detail-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, var(--slate-50), var(--white));
+        border-radius: 12px;
+        border: 2px solid var(--slate-200);
+        transition: all 0.3s ease;
+    }
+
+    .detail-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-blue);
+        box-shadow: var(--shadow-md);
+    }
+
+    .detail-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+    }
+
+    .detail-content strong {
+        display: block;
+        font-size: 1rem;
+        color: var(--navy-900);
+        margin-bottom: 0.25rem;
+        font-weight: 700;
+    }
+
+    .detail-content p {
+        font-size: 0.9rem;
+        color: var(--slate-600);
+        margin: 0;
+    }
+
+    /* Poster CTA Section */
+    .poster-cta-section {
+        margin-top: 2.5rem;
+        padding-top: 2.5rem;
+        border-top: 2px solid var(--slate-200);
+    }
+
+    .poster-cta-section h4 {
+        font-size: 1.5rem;
+        color: var(--navy-900);
+        margin-bottom: 1rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .cta-description {
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--slate-600);
+        margin-bottom: 2rem;
+        font-style: italic;
+    }
+
+    .poster-buttons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 2rem;
+    }
+
+    .poster-btn {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 2rem;
+        border-radius: 16px;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: var(--shadow-md);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid transparent;
+    }
+
+    .poster-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.4s ease;
+    }
+
+    .poster-btn:hover::before {
+        left: 100%;
+    }
+
+    .poster-btn.primary {
+        background: linear-gradient(135deg, var(--primary-blue), #0052cc);
+        color: var(--white);
+        grid-column: 1 / -1;
+    }
+
+    .poster-btn.primary:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 15px 35px rgba(0, 102, 255, 0.4);
+    }
+
+    .poster-btn.secondary {
+        background: linear-gradient(135deg, var(--slate-50), var(--white));
+        color: var(--navy-900);
+        border-color: var(--slate-300);
+    }
+
+    .poster-btn.secondary:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-blue);
+    }
+
+    .poster-btn .btn-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .poster-btn:hover .btn-icon {
+        transform: scale(1.2) rotate(5deg);
+    }
+
+    .btn-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .btn-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        display: block;
+    }
+
+    .btn-subtitle {
+        font-size: 0.85rem;
+        opacity: 0.8;
+        display: block;
+    }
+
+    .poster-btn.secondary .btn-subtitle {
+        color: var(--slate-600);
+    }
+
+    .poster-btn svg {
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .poster-btn:hover svg {
+        transform: translateX(5px);
+    }
+
+    /* Remove old criteria and judging sections */
+    .criteria-grid,
+    .poster-judging {
+        display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .tracks-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .details-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .poster-buttons-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .poster-btn.primary {
+            grid-column: 1;
+        }
+        
+        .poster-btn {
+            padding: 1.25rem 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .track-card {
+            padding: 1.5rem;
+        }
+        
+        .detail-item {
+            padding: 1.25rem;
+        }
+        
+        .poster-btn .btn-icon {
+            font-size: 1.5rem;
+        }
+        
+        .btn-title {
+            font-size: 1rem;
+        }
+}
     </style>
 </head>
+
 <body>
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loader"></div>
@@ -1267,8 +2198,9 @@
 
     <header class="hero">
         <div class="hero-content">
-            <h1 class="animate-on-scroll fade-in">Fire Fighting Boats 2nd Edition 2025 <span>Rule Book</span></h1>
-            <p class="subtitle animate-on-scroll fade-in" style="animation-delay: 0.3s;">The complete professional guide for the Fire Fighting Boats Competition. All rules, scoring, and specifications in one place.</p>
+            <h1 class="animate-on-scroll fade-in">Fire Fighting Boats 2nd Edition 2025</h1>
+            <p class="subtitle animate-on-scroll fade-in" style="animation-delay: 0.3s;">The complete professional guide
+                for the Fire Fighting Boats Competition. All rules, scoring, and specifications in one place.</p>
         </div>
     </header>
 
@@ -1288,34 +2220,93 @@
         </div>
     </nav>
     <section class="section" id="introduction">
-            <div class="container">
-                <div class="intro-grid">
+        <div class="container">
+            <div class="intro-grid">
+            </div>
+        </div>
+    </section>
+    <section class="section" id="overview" style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>Competition Overview</h2>
+                <p>Join us in the ultimate firefighting robotics challenge of 2025</p>
+            </div>
+            <div class="overview-content animate-on-scroll fade-in">
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="overview-icon">🎯</div>
+                        <h3>Mission</h3>
+                        <p>Design and build autonomous firefighting boats that can navigate, rescue, and extinguish fires in a simulated maritime environment.</p>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">👥</div>
+                        <h3>Who Can Join</h3>
+                        <p>Teams of 3-5 members across three age categories: Junior (Under 12), Intermediate (12-18), and Senior (18-25).</p>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">📅</div>
+                        <h3>Key Dates</h3>
+                        <p>Registration opens August 15, 2025. Competition day is October 24, 2025. Don't miss out!</p>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">🏆</div>
+                        <h3>Prizes</h3>
+                        <p>Over 100,000 EGP in total prizes, trophies, and special recognition awards from IEEE societies.</p>
+                    </div>
                 </div>
-            </div></section>
+                <div class="cta-container">
+                    <a href="https://forms.gle/dBWBDFpnjS8i43Az8" class="cta-button primary-cta">
+                        <span>Register Your Team</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="#poster-competition" class="cta-button secondary-cta">
+                        <span>Poster Competition</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section" id="introduction">
         <div class="container">
             <div class="intro-grid">
                 <div class="text-content animate-on-scroll slide-in-left">
                     <h3>A Dynamic Robotics Challenge</h3>
-                    <p>The Firefighting Boats Competition simulates a marine firefighting and rescue mission, challenging teams to design, build, and operate a robotic boat to navigate hazards, rescue items, and extinguish a fire with precision and speed. This edition enhances the complexity, blending mechanical, electronic, and control system engineering to solve real-world maritime safety problems.</p>
+                    <p>The Firefighting Boats Competition simulates a marine firefighting and rescue mission,
+                        challenging teams to design, build, and operate a robotic boat to navigate hazards, rescue
+                        items, and extinguish a fire with precision and speed. This edition enhances the complexity,
+                        blending mechanical, electronic, and control system engineering to solve real-world maritime
+                        safety problems.</p>
                 </div>
                 <div class="image-content animate-on-scroll slide-in-right">
-                     <img src="img1.jpg" alt="A well-designed fire fighting boat model" class="section-image" />
+                    <img src="img1.jpg" alt="A well-designed fire fighting boat model" class="section-image" />
                 </div>
             </div>
             <div class="intro-grid" style="margin-top: 100px;">
-                 <div class="text-content animate-on-scroll slide-in-left">
+                <div class="text-content animate-on-scroll slide-in-left">
                     <h3>Vision & Global Impact</h3>
-                    <p>More than a competition, this is a platform to inspire innovators. We foster skills in marine safety, fire mitigation, and environmental responsibility, aligning with key UN Sustainable Development Goals (SDGs).</p>
+                    <p>More than a competition, this is a platform to inspire innovators. We foster skills in marine
+                        safety, fire mitigation, and environmental responsibility, aligning with key UN Sustainable
+                        Development Goals (SDGs).</p>
                     <div class="sdg-grid">
-                        <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.1s;"><div class="sdg-icon">🏗️</div><div class="sdg-title">SDG 9: Industry & Innovation</div></div>
-                        <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;"><div class="sdg-icon">💨</div><div class="sdg-title">SDG 13: Climate Action</div></div>
-                        <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.3s;"><div class="sdg-icon">🌊</div><div class="sdg-title">SDG 14: Life Below Water</div></div>
+                        <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.1s;">
+                            <div class="sdg-icon">🏗️</div>
+                            <div class="sdg-title">SDG 9: Industry & Innovation</div>
+                        </div>
+                        <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;">
+                            <div class="sdg-icon">💨</div>
+                            <div class="sdg-title">SDG 13: Climate Action</div>
+                        </div>
+                        <div class="sdg-card animate-on-scroll zoom-in" style="animation-delay: 0.3s;">
+                            <div class="sdg-icon">🌊</div>
+                            <div class="sdg-title">SDG 14: Life Below Water</div>
+                        </div>
                     </div>
                 </div>
                 <div class="definitions-card animate-on-scroll slide-in-right">
                     <h3>Official Terminology</h3>
-                    <p><strong>Individual Team:</strong> A team not affiliated with an academy (e.g., school teams, independent groups).</p>
+                    <p><strong>Individual Team:</strong> A team not affiliated with an academy (e.g., school teams,
+                        independent groups).</p>
                     <p><strong>Manual Adjustment:</strong> Physically correcting the robot by hand during a trial.</p>
                     <p><strong>Rescue:</strong> Recovering floating objects according to category-specific rules.</p>
                     <p><strong>Incomplete Extinguishing:</strong> When a doused flame re-ignites.</p>
@@ -1329,48 +2320,93 @@
         <div class="container">
             <div class="section-header animate-on-scroll fade-in">
                 <h2>Competition Structure</h2>
-                <p>From registration to the final buzzer, here's how the competition unfolds. Familiarize yourself with the key dates and procedures.</p>
+                <p>From registration to the final buzzer, here's how the competition unfolds. Familiarize yourself with
+                    the key dates and procedures.</p>
             </div>
             <div class="timeline animate-on-scroll fade-in">
-                <div class="timeline-item"><div class="icon">📅</div><div class="date">Aug 15, 2025</div><div class="event">Registration Opens</div></div>
-                <div class="timeline-item"><div class="icon">🔒</div><div class="date">Oct 10, 2025</div><div class="event">Registration Closes</div></div>
-                <div class="timeline-item"><div class="icon">🧑‍🏫</div><div class="date">Oct 10-20</div><div class="event">Technical Mentoring</div></div>
-                <div class="timeline-item"><div class="icon">🏆</div><div class="date">Oct 24, 2025</div><div class="event">Competition Day</div></div>
+                <div class="timeline-item">
+                    <div class="icon">📅</div>
+                    <div class="date">Aug 15, 2025</div>
+                    <div class="event">Registration Opens</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">🔒</div>
+                    <div class="date">Oct 15, 2025</div>
+                    <div class="event">Registration Closes</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">🧑‍🏫</div>
+                    <div class="date">Oct 10-20</div>
+                    <div class="event">Technical Mentoring</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="icon">🏆</div>
+                    <div class="date">Oct 24, 2025</div>
+                    <div class="event">Competition Day</div>
+                </div>
             </div>
-             <div class="intro-grid" style="margin-top: 100px; align-items: flex-start;">
+            <div class="intro-grid" style="margin-top: 100px; align-items: flex-start;">
                 <div class="animate-on-scroll slide-in-left">
                     <img src="img2.jpg" alt="Teams preparing their fire fighting boats" class="section-image" />
                 </div>
                 <div class="structure-card animate-on-scroll slide-in-right">
-                     <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h3a1 1 0 0 1 1 1v1"/><path d="M19 9h1a1 1 0 0 1 1 1v3"/><path d="M19 15h.01"/><path d="M19 19h.01"/><path d="M15 20h.01"/><path d="M12 20h.01"/><path d="M9 20h.01"/><path d="M5 20h.01"/><path d="M5 16h.01"/><path d="M5 12h.01"/><path d="M5 8h.01"/><path d="M9 4h.01"/><path d="M12 4h.01"/><path d="m5 4 1-1"/><path d="m19 20-1-1"/><path d="m5 20 1-1"/><path d="m19 4-1-1"/><path d="M9 8h6v6H9z"/></svg>Procedures</h3>
-                     <ul>
-                         <li><strong>Registration:</strong> Academies can register one or more teams of 3-5 members. Individual teams not affiliated with an academy are also welcome to register. Academy-registered teams must have a dedicated supervisor present.</li>
-                         <li><strong>Testing:</strong> Teams get access to a testing arena after inspection. A 5-minute calibration period is provided before each official trial.</li>
-                         <li><strong>Inspection:</strong> Verifies all constraints and team knowledge. An official ID sticker is applied, which is mandatory for competition. No coaches allowed.</li>
-                     </ul>
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 4h3a1 1 0 0 1 1 1v1" />
+                            <path d="M19 9h1a1 1 0 0 1 1 1v3" />
+                            <path d="M19 15h.01" />
+                            <path d="M19 19h.01" />
+                            <path d="M15 20h.01" />
+                            <path d="M12 20h.01" />
+                            <path d="M9 20h.01" />
+                            <path d="M5 20h.01" />
+                            <path d="M5 16h.01" />
+                            <path d="M5 12h.01" />
+                            <path d="M5 8h.01" />
+                            <path d="M9 4h.01" />
+                            <path d="M12 4h.01" />
+                            <path d="m5 4 1-1" />
+                            <path d="m19 20-1-1" />
+                            <path d="m5 20 1-1" />
+                            <path d="m19 4-1-1" />
+                            <path d="M9 8h6v6H9z" />
+                        </svg>Procedures</h3>
+                    <ul>
+                        <li><strong>Registration:</strong> Academies can register one or more teams of 3-5 members.
+                            Individual teams not affiliated with an academy are also welcome to register.
+                            Academy-registered teams must have a dedicated supervisor present.</li>
+                        <li><strong>Testing:</strong> Teams get access to a testing arena after inspection. A 5-minute
+                            calibration period is provided before each official trial.</li>
+                        <li><strong>Inspection:</strong> Verifies all constraints and team knowledge. An official ID
+                            sticker is applied, which is mandatory for competition. No coaches allowed.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <section class="section" id="robot-specs">
         <div class="container">
             <div class="section-header animate-on-scroll fade-in">
                 <h2>General Robot Specifications</h2>
-                <p>These core rules apply to all robots across all categories. Adherence is mandatory and will be verified during inspection.</p>
+                <p>These core rules apply to all robots across all categories. Adherence is mandatory and will be
+                    verified during inspection.</p>
             </div>
-             <div class="structure-grid">
+            <div class="structure-grid">
                 <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0s;">
                     <h3>⚖️ Weight Constraints</h3>
-                    <p>Maximum robot weight is <strong>3kg</strong>, including all components, batteries, and any onboard water at the start of the trial.</p>
+                    <p>Maximum robot weight is <strong>3kg</strong>, including all components, batteries, and any
+                        onboard water at the start of the trial.</p>
                 </div>
                 <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;">
                     <h3>📏 Size Constraints</h3>
-                     <p>Maximum dimensions are <strong>25cm (L) x 25cm (W) x 10cm</strong> (submerged depth). The water hose must not exceed 5cm in length.</p>
+                    <p>Maximum dimensions are <strong>25cm (L) x 25cm (W) x 10cm</strong> (submerged depth). The water
+                        hose must not exceed 5cm in length.</p>
                 </div>
                 <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.4s;">
                     <h3>🔥 Firefighting Constraints</h3>
-                     <p>The flame must be extinguished using <strong>water only</strong>. Any other method (e.g., air blowers) is strictly prohibited and results in round disqualification.</p>
+                    <p>The flame must be extinguished using <strong>water only</strong>. Any other method (e.g., air
+                        blowers) is strictly prohibited and results in round disqualification.</p>
                 </div>
             </div>
         </div>
@@ -1380,10 +2416,11 @@
         <div class="container">
             <div class="section-header animate-on-scroll fade-in">
                 <h2>Competition Categories</h2>
-                <p>The competition is divided into three categories based on age and complexity. Find your category to see the specific tasks, scoring, and rules.</p>
+                <p>The competition is divided into three categories based on age and complexity. Find your category to
+                    see the specific tasks, scoring, and rules.</p>
             </div>
             <div class="category-grid">
-                
+
                 <article class="category-card junior animate-on-scroll rotate-in">
                     <header class="category-header">
                         <h3 class="title">Junior Category</h3>
@@ -1397,33 +2434,87 @@
                                 <div class="score">585</div>
                             </div>
                             <table class="scoring-table">
-                                <thead><tr><th>Mission / Bonus</th><th style="text-align: right;">Points</th></tr></thead>
+                                <thead>
+                                    <tr>
+                                        <th>Mission / Bonus</th>
+                                        <th style="text-align: right;">Points</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
-                                    <tr><td>Extinguish flame completely</td><td align="right"><span class="points-badge mission">200</span></td></tr>
-                                    <tr><td>Return to start position</td><td align="right"><span class="points-badge mission">50</span></td></tr>
-                                    <tr><td>Rescue Mission (Tap 2 items)</td><td align="right"><span class="points-badge mission">20 / item</span></td></tr>
-                                    <tr><td>Complete < 3 mins</td><td align="right"><span class="points-badge bonus">+100</span></td></tr>
-                                    <tr><td>Every second saved < 2 mins</td><td align="right"><span class="points-badge bonus">+1 / sec</span></td></tr>
-                                    <tr><td>Accurate targeting (within 10cm)</td><td align="right"><span class="points-badge bonus">+50</span></td></tr>
-                                    <tr><td>Efficient water usage</td><td align="right"><span class="points-badge bonus">+25</span></td></tr>
+                                    <tr>
+                                        <td>Extinguish flame completely</td>
+                                        <td align="right"><span class="points-badge mission">200</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Return to start position</td>
+                                        <td align="right"><span class="points-badge mission">50</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rescue Mission (Tap 2 items)</td>
+                                        <td align="right"><span class="points-badge mission">20 / item</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complete < 3 mins</td>
+                                        <td align="right"><span class="points-badge bonus">+100</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Every second saved < 2 mins</td>
+                                        <td align="right"><span class="points-badge bonus">+1 / sec</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Accurate targeting (within 10cm)</td>
+                                        <td align="right"><span class="points-badge bonus">+50</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Efficient water usage</td>
+                                        <td align="right"><span class="points-badge bonus">+25</span></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div>
-                             <h3>Penalties & Rules</h3>
-                             <table class="scoring-table">
-                                 <thead><tr><th>Infraction</th><th style="text-align: right;">Penalty</th></tr></thead>
-                                 <tbody>
-                                     <tr><td>Wall collision (from 3rd+)</td><td align="right"><span class="points-badge penalty">-10</span></td></tr>
-                                     <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
-                                     <tr><td>Splashing other teams</td><td align="right"><span class="points-badge penalty">-25</span></td></tr>
-                                     <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-100</span></td></tr>
-                                     <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-20</span></td></tr>
-                                     <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-50 to -100</span></td></tr>
-                                     <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
-                                 </tbody>
-                             </table>
-                             <img src="img4.jpg" alt="Competition arena for the Junior category" class="section-image animate-on-scroll zoom-in" />
+                            <h3>Penalties & Rules</h3>
+                            <table class="scoring-table">
+                                <thead>
+                                    <tr>
+                                        <th>Infraction</th>
+                                        <th style="text-align: right;">Penalty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Wall collision (from 3rd+)</td>
+                                        <td align="right"><span class="points-badge penalty">-10</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manual adjustment of robot</td>
+                                        <td align="right"><span class="points-badge penalty">-50</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Splashing other teams</td>
+                                        <td align="right"><span class="points-badge penalty">-25</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>System activation outside arena</td>
+                                        <td align="right"><span class="points-badge penalty">-100</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Damaging a rescue item</td>
+                                        <td align="right"><span class="points-badge penalty">-20</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Safety violation</td>
+                                        <td align="right"><span class="points-badge penalty">-50 to -100</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Damaging arena equipment</td>
+                                        <td align="right"><span class="points-badge disqualified">Disqualified</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <img src="img4.jpg" alt="Competition arena for the Junior category"
+                                class="section-image animate-on-scroll zoom-in" />
                         </div>
                     </div>
                 </article>
@@ -1435,44 +2526,101 @@
                     </header>
                     <div class="category-content-wrapper">
                         <div>
-                             <h3>Tasks & Scoring</h3>
+                            <h3>Tasks & Scoring</h3>
                             <div class="max-score-card">
                                 <div class="label">Maximum Possible Score</div>
                                 <div class="score">1025</div>
                             </div>
                             <table class="scoring-table">
-                                <thead><tr><th>Mission / Bonus</th><th style="text-align: right;">Points</th></tr></thead>
+                                <thead>
+                                    <tr>
+                                        <th>Mission / Bonus</th>
+                                        <th style="text-align: right;">Points</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
-                                    <tr><td>Extinguish flames (2)</td><td align="right"><span class="points-badge mission">150 per candle</span></td></tr>
-                                    <tr><td>Return to start position</td><td align="right"><span class="points-badge mission">75</span></td></tr>
-                                    <tr><td>Rescue (Push/Pull 3 items)</td><td align="right"><span class="points-badge mission">20 / item</span></td></tr>
-                                    <tr><td>Complete under 3 mins</td><td align="right"><span class="points-badge bonus">+150</span></td></tr>
-                                    <tr><td>Every second saved < 2 mins</td><td align="right"><span class="points-badge bonus">+2 / sec</span></td></tr>
-                                    <tr><td>Accurate targeting (within 5cm)</td><td align="right"><span class="points-badge bonus">+50</span></td></tr>
-                                    <tr><td>Autonomous navigation</td><td align="right"><span class="points-badge bonus">+100</span></td></tr>
-                                    <tr><td>Efficient water usage</td><td align="right"><span class="points-badge bonus">+50</span></td></tr>
+                                    <tr>
+                                        <td>Extinguish flames (2)</td>
+                                        <td align="right"><span class="points-badge mission">150 per candle</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Return to start position</td>
+                                        <td align="right"><span class="points-badge mission">75</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rescue (Push/Pull 3 items)</td>
+                                        <td align="right"><span class="points-badge mission">20 / item</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complete under 3 mins</td>
+                                        <td align="right"><span class="points-badge bonus">+150</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Every second saved < 2 mins</td>
+                                        <td align="right"><span class="points-badge bonus">+2 / sec</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Accurate targeting (within 5cm)</td>
+                                        <td align="right"><span class="points-badge bonus">+50</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Autonomous navigation</td>
+                                        <td align="right"><span class="points-badge bonus">+100</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Efficient water usage</td>
+                                        <td align="right"><span class="points-badge bonus">+50</span></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div>
-                             <h3>Penalties & Rules</h3>
-                             <table class="scoring-table">
-                                 <thead><tr><th>Infraction</th><th style="text-align: right;">Penalty</th></tr></thead>
-                                 <tbody>
-                                     <tr><td>Wall collision</td><td align="right"><span class="points-badge penalty">-15</span></td></tr>
-                                     <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
-                                     <tr><td>Incomplete flame extinguishing</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
-                                     <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-150</span></td></tr>
-                                     <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-30</span></td></tr>
-                                     <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-75 to -150</span></td></tr>
-                                     <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
-                                 </tbody>
-                             </table>
-                             <img src="img5.png" alt="A fire fighting boat in the competition pool" class="section-image animate-on-scroll zoom-in" />
+                            <h3>Penalties & Rules</h3>
+                            <table class="scoring-table">
+                                <thead>
+                                    <tr>
+                                        <th>Infraction</th>
+                                        <th style="text-align: right;">Penalty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Wall collision</td>
+                                        <td align="right"><span class="points-badge penalty">-15</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manual adjustment of robot</td>
+                                        <td align="right"><span class="points-badge penalty">-50</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Incomplete flame extinguishing</td>
+                                        <td align="right"><span class="points-badge penalty">-50</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>System activation outside arena</td>
+                                        <td align="right"><span class="points-badge penalty">-150</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Damaging a rescue item</td>
+                                        <td align="right"><span class="points-badge penalty">-30</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Safety violation</td>
+                                        <td align="right"><span class="points-badge penalty">-75 to -150</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Damaging arena equipment</td>
+                                        <td align="right"><span class="points-badge disqualified">Disqualified</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <img src="img5.png" alt="A fire fighting boat in the competition pool"
+                                class="section-image animate-on-scroll zoom-in" />
                         </div>
                     </div>
                 </article>
-                
+
                 <article class="category-card senior animate-on-scroll rotate-in" style="animation-delay: 0.4s;">
                     <header class="category-header">
                         <h3 class="title">Senior Category</h3>
@@ -1480,44 +2628,113 @@
                     </header>
                     <div class="category-content-wrapper">
                         <div>
-                             <h3>Tasks & Scoring</h3>
+                            <h3>Tasks & Scoring</h3>
                             <div class="max-score-card">
                                 <div class="label">Maximum Possible Score</div>
                                 <div class="score">2675</div>
                             </div>
                             <table class="scoring-table">
-                                <thead><tr><th>Mission / Bonus</th><th style="text-align: right;">Points</th></tr></thead>
+                                <thead>
+                                    <tr>
+                                        <th>Mission / Bonus</th>
+                                        <th style="text-align: right;">Points</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
-                                    <tr><td>Extinguish flames (up to 5)</td><td align="right"><span class="points-badge mission">150 per candle</span></td></tr>
-                                    <tr><td>Return to start position</td><td align="right"><span class="points-badge mission">100</span></td></tr>
-                                    <tr><td>Pick up rescue items (5)</td><td align="right"><span class="points-badge mission">20 / item</span></td></tr>
-                                    <tr><td>Transport items to rescue zone</td><td align="right"><span class="points-badge mission">30 / item</span></td></tr>
-                                    <tr><td>Complete under 4 mins</td><td align="right"><span class="points-badge bonus">+200</span></td></tr>
-                                    <tr><td>Complete under 3 mins</td><td align="right"><span class="points-badge bonus">+400</span></td></tr>
-                                    <tr><td>Every second saved < 2 mins</td><td align="right"><span class="points-badge bonus">+5 / sec</span></td></tr>
-                                    <tr><td>Precise targeting (within 3cm)</td><td align="right"><span class="points-badge bonus">+100</span></td></tr>
-                                    <tr><td>Fully autonomous operation</td><td align="right"><span class="points-badge bonus">+150</span></td></tr>
-                                    <tr><td>Efficient water usage</td><td align="right"><span class="points-badge bonus">+75</span></td></tr>
+                                    <tr>
+                                        <td>Extinguish flames (up to 5)</td>
+                                        <td align="right"><span class="points-badge mission">150 per candle</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Return to start position</td>
+                                        <td align="right"><span class="points-badge mission">100</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pick up rescue items (5)</td>
+                                        <td align="right"><span class="points-badge mission">20 / item</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transport items to rescue zone</td>
+                                        <td align="right"><span class="points-badge mission">30 / item</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complete under 4 mins</td>
+                                        <td align="right"><span class="points-badge bonus">+200</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complete under 3 mins</td>
+                                        <td align="right"><span class="points-badge bonus">+400</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Every second saved < 2 mins</td>
+                                        <td align="right"><span class="points-badge bonus">+5 / sec</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Precise targeting (within 3cm)</td>
+                                        <td align="right"><span class="points-badge bonus">+100</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fully autonomous operation</td>
+                                        <td align="right"><span class="points-badge bonus">+150</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Efficient water usage</td>
+                                        <td align="right"><span class="points-badge bonus">+75</span></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div>
-                             <h3>Penalties & Rules</h3>
-                             <table class="scoring-table">
-                                 <thead><tr><th>Infraction</th><th style="text-align: right;">Penalty</th></tr></thead>
-                                 <tbody>
-                                     <tr><td>Wall / Obstacle collision</td><td align="right"><span class="points-badge penalty">-20 / -25</span></td></tr>
-                                     <tr><td>Manual adjustment of robot</td><td align="right"><span class="points-badge penalty">-50</span></td></tr>
-                                     <tr><td>Incomplete flame extinguishing</td><td align="right"><span class="points-badge penalty">-100</span></td></tr>
-                                     <tr><td>Dropping a rescue item</td><td align="right"><span class="points-badge penalty">-25</span></td></tr>
-                                     <tr><td>Damaging a rescue item</td><td align="right"><span class="points-badge penalty">-40</span></td></tr>
-                                     <tr><td>Failed rescue pickup/placement</td><td align="right"><span class="points-badge penalty">-10 / -20</span></td></tr>
-                                     <tr><td>System activation outside arena</td><td align="right"><span class="points-badge penalty">-200</span></td></tr>
-                                     <tr><td>Safety violation</td><td align="right"><span class="points-badge penalty">-100 to -200</span></td></tr>
-                                     <tr><td>Damaging arena equipment</td><td align="right"><span class="points-badge disqualified">Disqualified</span></td></tr>
-                                 </tbody>
-                             </table>
-                              <img src="img6.png" alt="Competition arena for the Senior category" class="section-image animate-on-scroll zoom-in" />
+                            <h3>Penalties & Rules</h3>
+                            <table class="scoring-table">
+                                <thead>
+                                    <tr>
+                                        <th>Infraction</th>
+                                        <th style="text-align: right;">Penalty</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Wall / Obstacle collision</td>
+                                        <td align="right"><span class="points-badge penalty">-20 / -25</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manual adjustment of robot</td>
+                                        <td align="right"><span class="points-badge penalty">-50</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Incomplete flame extinguishing</td>
+                                        <td align="right"><span class="points-badge penalty">-100</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dropping a rescue item</td>
+                                        <td align="right"><span class="points-badge penalty">-25</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Damaging a rescue item</td>
+                                        <td align="right"><span class="points-badge penalty">-40</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Failed rescue pickup/placement</td>
+                                        <td align="right"><span class="points-badge penalty">-10 / -20</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>System activation outside arena</td>
+                                        <td align="right"><span class="points-badge penalty">-200</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Safety violation</td>
+                                        <td align="right"><span class="points-badge penalty">-100 to -200</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Damaging arena equipment</td>
+                                        <td align="right"><span class="points-badge disqualified">Disqualified</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <img src="img6.png" alt="Competition arena for the Senior category"
+                                class="section-image animate-on-scroll zoom-in" />
                         </div>
                     </div>
                 </article>
@@ -1525,73 +2742,161 @@
             </div>
         </div>
     </section>
-    
+
     <section class="section" id="safety">
         <div class="container">
             <div class="section-header animate-on-scroll fade-in">
                 <h2>Safety Specifications</h2>
-                <p>Safety is paramount. All teams must strictly adhere to these regulations. Violations will be penalized and may lead to disqualification.</p>
+                <p>Safety is paramount. All teams must strictly adhere to these regulations. Violations will be
+                    penalized and may lead to disqualification.</p>
             </div>
             <div class="structure-grid">
-                <div class="structure-card animate-on-scroll fade-in"><h3>💧 Water Safety</h3><ul><li><strong>Eco-friendly Materials:</strong> All materials must be non-toxic and must not leave debris in the pool.</li><li><strong>Perimeter Safety:</strong> Team members must remain behind designated safety lines. Only authorized members may handle boats at the water's edge.</li><li><strong>Equipment Rescue:</strong> Retrieval of a malfunctioning boat is handled exclusively by on-site organizers.</li></ul></div>
-                <div class="structure-card animate-on-scroll fade-in" style="animation-delay: 0.1s;"><h3>⚡ Electrical Safety</h3><ul><li><strong>Battery Handling:</strong> Maximum 12V power systems. All batteries must be securely mounted and sealed from water exposure.</li><li><strong>Wiring and Insulation:</strong> All electrical connections must be properly insulated and waterproofed.</li><li><strong>Circuit Protection:</strong> Systems must include appropriate fuses or current-limiting components.</li><li><strong>Component Safety:</strong> All electronics must be secure, isolated, and have clear emergency disconnects.</li></ul></div>
-                <div class="structure-card animate-on-scroll fade-in" style="animation-delay: 0.2s;"><h3>🔧 Mechanical Safety</h3><ul><li><strong>Sharp Edges:</strong> Robots must have no sharp or pointed projections. All edges must be smooth or covered.</li><li><strong>Propulsion Safety:</strong> Propellers and water jet nozzles must be enclosed in protective guards to prevent accidental contact.</li></ul></div>
-                <div class="structure-card animate-on-scroll fade-in" style="animation-delay: 0.3s;"><h3>🚒 Firefighting System</h3><ul><li><strong>Water Pressure:</strong> Water streams must operate at a safe pressure level.</li><li><strong>Controlled Activation:</strong> Systems must be designed to prevent accidental discharge outside the designated arena zone.</li></ul></div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="section" id="conduct">
-        <div class="container">
-            <div class="section-header animate-on-scroll fade-in">
-                <h2>Code of Conduct</h2>
-                <p>A positive, respectful, and collaborative environment is essential for a successful competition. All participants are expected to uphold these standards.</p>
-            </div>
-             <div class="structure-grid">
-                <div class="structure-card animate-on-scroll zoom-in"><h3>🤝 Team Interactions</h3><p>Respect other teams' space, equipment, and efforts. Sabotage or verbal misconduct is grounds for immediate disqualification. Collaboration is encouraged. Photographing or recording another team's robot during their trial is strictly forbidden.</p></div>
-                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;"><h3>🧑‍⚖️ Officials & Judging</h3><p>All communication with judges and staff must be polite. Only designated team spokespersons may approach judges. Arguments are not tolerated. All judges' decisions are final.</p></div>
-                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.4s;"><h3>📜 Infraction Policy</h3>
+                <div class="structure-card animate-on-scroll fade-in">
+                    <h3>💧 Water Safety</h3>
                     <ul>
-                        <li><strong>1st Infraction:</strong> A formal verbal warning.</li>
-                        <li><strong>2nd Infraction:</strong> A -25 point deduction from the team's score.</li>
-                        <li><strong>3rd Infraction:</strong> Immediate disqualification from the round and/or competition.</li>
+                        <li><strong>Eco-friendly Materials:</strong> All materials must be non-toxic and must not leave
+                            debris in the pool.</li>
+                        <li><strong>Perimeter Safety:</strong> Team members must remain behind designated safety lines.
+                            Only authorized members may handle boats at the water's edge.</li>
+                        <li><strong>Equipment Rescue:</strong> Retrieval of a malfunctioning boat is handled exclusively
+                            by on-site organizers.</li>
+                    </ul>
+                </div>
+                <div class="structure-card animate-on-scroll fade-in" style="animation-delay: 0.1s;">
+                    <h3>⚡ Electrical Safety</h3>
+                    <ul>
+                        <li><strong>Battery Handling:</strong> Maximum 12V power systems. All batteries must be securely
+                            mounted and sealed from water exposure.</li>
+                        <li><strong>Wiring and Insulation:</strong> All electrical connections must be properly
+                            insulated and waterproofed.</li>
+                        <li><strong>Circuit Protection:</strong> Systems must include appropriate fuses or
+                            current-limiting components.</li>
+                        <li><strong>Component Safety:</strong> All electronics must be secure, isolated, and have clear
+                            emergency disconnects.</li>
+                    </ul>
+                </div>
+                <div class="structure-card animate-on-scroll fade-in" style="animation-delay: 0.2s;">
+                    <h3>🔧 Mechanical Safety</h3>
+                    <ul>
+                        <li><strong>Sharp Edges:</strong> Robots must have no sharp or pointed projections. All edges
+                            must be smooth or covered.</li>
+                        <li><strong>Propulsion Safety:</strong> Propellers and water jet nozzles must be enclosed in
+                            protective guards to prevent accidental contact.</li>
+                    </ul>
+                </div>
+                <div class="structure-card animate-on-scroll fade-in" style="animation-delay: 0.3s;">
+                    <h3>🚒 Firefighting System</h3>
+                    <ul>
+                        <li><strong>Water Pressure:</strong> Water streams must operate at a safe pressure level.</li>
+                        <li><strong>Controlled Activation:</strong> Systems must be designed to prevent accidental
+                            discharge outside the designated arena zone.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="section" id="conduct">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>Code of Conduct</h2>
+                <p>A positive, respectful, and collaborative environment is essential for a successful competition. All
+                    participants are expected to uphold these standards.</p>
+            </div>
+            <div class="structure-grid">
+                <div class="structure-card animate-on-scroll zoom-in">
+                    <h3>🤝 Team Interactions</h3>
+                    <p>Respect other teams' space, equipment, and efforts. Sabotage or verbal misconduct is grounds for
+                        immediate disqualification. Collaboration is encouraged. Photographing or recording another
+                        team's robot during their trial is strictly forbidden.</p>
+                </div>
+                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.2s;">
+                    <h3>🧑‍⚖️ Officials & Judging</h3>
+                    <p>All communication with judges and staff must be polite. Only designated team spokespersons may
+                        approach judges. Arguments are not tolerated. All judges' decisions are final.</p>
+                </div>
+                <div class="structure-card animate-on-scroll zoom-in" style="animation-delay: 0.4s;">
+                    <h3>📜 Infraction Policy</h3>
+                    <ul>
+                        <li><strong>1st Infraction:</strong> A formal verbal warning.</li>
+                        <li><strong>2nd Infraction:</strong> A -25 point deduction from the team's score.</li>
+                        <li><strong>3rd Infraction:</strong> Immediate disqualification from the round and/or
+                            competition.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="section" id="prizes">
         <div class="container">
             <div class="section-header animate-on-scroll fade-in">
                 <h2>Awards & Prizes</h2>
-                <p>We recognize excellence in performance, design, and innovation. All teams receive a certificate and medal for their participation.</p>
+                <p>We recognize excellence in performance, design, and innovation. All teams receive a certificate and
+                    medal for their participation.</p>
             </div>
-            
+
             <div class="prize-category-block animate-on-scroll fade-in">
                 <h3 class="prize-category-header junior-color">🌟 Junior Category Awards</h3>
                 <div class="prize-grid">
-                    <div class="prize-card first"><h3>🥇 1st Place</h3><div class="amount">10,000 EGP</div><p>+ Gold Trophy</p></div>
-                    <div class="prize-card second"><h3>🥈 2nd Place</h3><div class="amount">8,000 EGP</div><p>+ Silver Trophy</p></div>
-                    <div class="prize-card third"><h3>🥉 3rd Place</h3><div class="amount">6,000 EGP</div><p>+ Bronze Trophy</p></div>
+                    <div class="prize-card first">
+                        <h3>🥇 1st Place</h3>
+                        <div class="amount">10,000 EGP</div>
+                        <p>+ Gold Trophy</p>
+                    </div>
+                    <div class="prize-card second">
+                        <h3>🥈 2nd Place</h3>
+                        <div class="amount">8,000 EGP</div>
+                        <p>+ Silver Trophy</p>
+                    </div>
+                    <div class="prize-card third">
+                        <h3>🥉 3rd Place</h3>
+                        <div class="amount">6,000 EGP</div>
+                        <p>+ Bronze Trophy</p>
+                    </div>
                 </div>
             </div>
 
             <div class="prize-category-block animate-on-scroll fade-in">
                 <h3 class="prize-category-header intermediate-color">⚡ Intermediate Category Awards</h3>
                 <div class="prize-grid">
-                    <div class="prize-card first"><h3>🥇 1st Place</h3><div class="amount">10,000 EGP</div><p>+ Gold Trophy</p></div>
-                    <div class="prize-card second"><h3>🥈 2nd Place</h3><div class="amount">8,000 EGP</div><p>+ Silver Trophy</p></div>
-                    <div class="prize-card third"><h3>🥉 3rd Place</h3><div class="amount">6,000 EGP</div><p>+ Bronze Trophy</p></div>
+                    <div class="prize-card first">
+                        <h3>🥇 1st Place</h3>
+                        <div class="amount">10,000 EGP</div>
+                        <p>+ Gold Trophy</p>
+                    </div>
+                    <div class="prize-card second">
+                        <h3>🥈 2nd Place</h3>
+                        <div class="amount">8,000 EGP</div>
+                        <p>+ Silver Trophy</p>
+                    </div>
+                    <div class="prize-card third">
+                        <h3>🥉 3rd Place</h3>
+                        <div class="amount">6,000 EGP</div>
+                        <p>+ Bronze Trophy</p>
+                    </div>
                 </div>
             </div>
 
             <div class="prize-category-block animate-on-scroll fade-in">
                 <h3 class="prize-category-header senior-color">🚀 Senior Category Awards</h3>
                 <div class="prize-grid">
-                    <div class="prize-card first"><h3>🥇 1st Place</h3><div class="amount">15,000 EGP</div><p>+ Gold Trophy</p></div>
-                    <div class="prize-card second"><h3>🥈 2nd Place</h3><div class="amount">11,000 EGP</div><p>+ Silver Trophy</p></div>
-                    <div class="prize-card third"><h3>🥉 3rd Place</h3><div class="amount">7,000 EGP</div><p>+ Bronze Trophy</p></div>
+                    <div class="prize-card first">
+                        <h3>🥇 1st Place</h3>
+                        <div class="amount">15,000 EGP</div>
+                        <p>+ Gold Trophy</p>
+                    </div>
+                    <div class="prize-card second">
+                        <h3>🥈 2nd Place</h3>
+                        <div class="amount">11,000 EGP</div>
+                        <p>+ Silver Trophy</p>
+                    </div>
+                    <div class="prize-card third">
+                        <h3>🥉 3rd Place</h3>
+                        <div class="amount">7,000 EGP</div>
+                        <p>+ Bronze Trophy</p>
+                    </div>
                 </div>
             </div>
 
@@ -1599,35 +2904,45 @@
                 <h3 class="prize-category-header" style="color: var(--accent-purple);">🏛️ Societies Awards - Performance Based</h3>
                 <div class="prize-grid">
                     <div class="prize-card" style="border-color: var(--accent-pink);">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">👩‍💼</div>
+                        <div class="award-image-container">
+                            <img src="wie-logo.png" alt="Women in Engineering Award" class="award-logo" />
+                        </div>
                         <h3>WIE Award</h3>
                         <div class="amount">5,000 EGP</div>
                         <p><strong>Women in Engineering</strong></p>
                         <p style="font-size: 0.9rem; color: var(--slate-600); margin-top: 1rem;">Recognizing excellence in engineering innovation</p>
                     </div>
                     <div class="prize-card" style="border-color: var(--primary-blue);">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">💻</div>
+                        <div class="award-image-container">
+                            <img src="cs-logo.png" alt="Computer Society Award" class="award-logo" />
+                        </div>
                         <h3>CS Award</h3>
                         <div class="amount">5,000 EGP</div>
                         <p><strong>Computer Society</strong></p>
                         <p style="font-size: 0.9rem; color: var(--slate-600); margin-top: 1rem;">Outstanding computational solutions</p>
                     </div>
                     <div class="prize-card" style="border-color: var(--secondary-orange);">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">🏭</div>
+                        <div class="award-image-container">
+                            <img src="ias-logo.png" alt="Industrial Applications Society Award" class="award-logo" />
+                        </div>
                         <h3>IAS Award</h3>
                         <div class="amount">5,000 EGP</div>
                         <p><strong>Industrial Applications Society</strong></p>
                         <p style="font-size: 0.9rem; color: var(--slate-600); margin-top: 1rem;">Best industrial engineering approach</p>
                     </div>
                     <div class="prize-card" style="border-color: var(--accent-green);">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">🌍</div>
+                        <div class="award-image-container">
+                            <img src="r8-logo.png" alt="Region 8 SAC Award" class="award-logo" />
+                        </div>
                         <h3>R8 Award</h3>
                         <div class="amount">5,000 EGP</div>
                         <p><strong>Region 8 SAC</strong></p>
                         <p style="font-size: 0.9rem; color: var(--slate-600); margin-top: 1rem;">Regional excellence recognition</p>
                     </div>
                     <div class="prize-card" style="border-color: var(--accent-purple);">
-                        <div style="font-size: 3rem; margin-bottom: 1rem;">🤖</div>
+                        <div class="award-image-container">
+                            <img src="ras-logo.png" alt="Robotics and Automation Society Award" class="award-logo" />
+                        </div>
                         <h3>RAS Award</h3>
                         <div class="amount">5,000 EGP</div>
                         <p><strong>Robotics and Automation Society</strong></p>
@@ -1636,21 +2951,239 @@
                 </div>
             </div>
 
-             <div class="structure-card animate-on-scroll zoom-in" style="margin-top: 5rem; text-align: center;"><h3>🏆 Special Awards</h3><p>Best Boat Design, Best Boat Flyer, Fastest Extinguishing, Most Innovative Mechanism, Most Accurate Targeting, Best Navigation, Crowd's Favorite, Judge's Choice.</p></div>
+            <div class="structure-card animate-on-scroll zoom-in" style="margin-top: 5rem; text-align: center;">
+                <h3>🏆 Special Awards</h3>
+                <p>Best Boat Design, Best Boat Flyer, Fastest Extinguishing, Most Innovative Mechanism, Most Accurate
+                    Targeting, Best Navigation, Crowd's Favorite, Judge's Choice.</p>
+            </div>
         </div>
     </section>
 
+    <section class="section" id="poster-competition" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2 style="color: white;">Poster Competition</h2>
+                <p style="color: var(--slate-300);">Showcase your innovation and claim your place among the champions</p>
+            </div>
+            
+            <div class="poster-content animate-on-scroll fade-in">
+                <div class="poster-info-card">
+                    <div class="poster-header">
+                        <div class="poster-icon">🎨</div>
+                        <h3>Embrace More Champions</h3>
+                    </div>
+                    <p>As part of FireFighting Boat Robotics Competition V2, we are extending the challenge with a Poster Competition! University students and professionals can showcase their ideas and projects to experts from industry and academia.</p>
+                    
+                    <div class="poster-tracks">
+                        <h4>Competition Tracks</h4>
+                        <div class="tracks-grid">
+                            <div class="track-card">
+                                <div class="track-icon">🌊</div>
+                                <h5>Track 1</h5>
+                                <p>Marine Environmental Solutions & Sustainability</p>
+                            </div>
+                            <div class="track-card">
+                                <div class="track-icon">⚓</div>
+                                <h5>Track 2</h5>
+                                <p>Marine Technology & Safety Innovation</p>
+                            </div>
+                            <div class="track-card">
+                                <div class="track-icon">🚢</div>
+                                <h5>Track 3</h5>
+                                <p>Marine Logistics & Supply Chain Efficiency</p>
+                            </div>
+                            <div class="track-card">
+                                <div class="track-icon">📦</div>
+                                <h5>Track 4</h5>
+                                <p>Marine Inventory Management</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="poster-requirements">
+                        <h4>Competition Details</h4>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <div class="detail-icon">👥</div>
+                                <div class="detail-content">
+                                    <strong>Team Size</strong>
+                                    <p>2 to 5 members</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">💰</div>
+                                <div class="detail-content">
+                                    <strong>Registration Fee</strong>
+                                    <p>200 EGP per person</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">📅</div>
+                                <div class="detail-content">
+                                    <strong>Deadline</strong>
+                                    <p>15th October 2025</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-icon">🎯</div>
+                                <div class="detail-content">
+                                    <strong>Eligibility</strong>
+                                    <p>University Students & Professionals</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="poster-cta-section">
+                        <h4>Get Started</h4>
+                        <p class="cta-description">Bring your vision, spark innovation, and claim your place among the champions!</p>
+                        <div class="poster-buttons-grid">
+                            <a href="https://forms.gle/Gg21QTS4RiACeWGf7" target="_blank" class="poster-btn primary">
+                                <div class="btn-icon">📝</div>
+                                <div class="btn-content">
+                                    <span class="btn-title">Register Now</span>
+                                    <span class="btn-subtitle">Submit your team</span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://shorturl.at/ggOhl" target="_blank" class="poster-btn secondary">
+                                <div class="btn-icon">📋</div>
+                                <div class="btn-content">
+                                    <span class="btn-title">Guidelines</span>
+                                    <span class="btn-subtitle">Competition rules</span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://shorturl.at/hyKr1" target="_blank" class="poster-btn secondary">
+                                <div class="btn-icon">📊</div>
+                                <div class="btn-content">
+                                    <span class="btn-title">Portfolio Rubric</span>
+                                    <span class="btn-subtitle">Judging criteria</span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://shorturl.at/yrNYP" target="_blank" class="poster-btn secondary">
+                                <div class="btn-icon">🎨</div>
+                                <div class="btn-content">
+                                    <span class="btn-title">Poster Template</span>
+                                    <span class="btn-subtitle">Design template</span>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="poster-prizes">
+                        <h4>Prizes & Recognition</h4>
+                        <div class="poster-prize-grid">
+                            <div class="poster-prize-item">
+                                <div class="prize-medal">🥇</div>
+                                <div class="prize-amount">5,000 EGP</div>
+                                <div class="prize-place">1st Place</div>
+                            </div>
+                            <div class="poster-prize-item">
+                                <div class="prize-medal">🥈</div>
+                                <div class="prize-amount">3,000 EGP</div>
+                                <div class="prize-place">2nd Place</div>
+                            </div>
+                            <div class="poster-prize-item">
+                                <div class="prize-medal">🥉</div>
+                                <div class="prize-amount">2,000 EGP</div>
+                                <div class="prize-place">3rd Place</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="sponsors">
+        <div class="container">
+            <div class="section-header animate-on-scroll fade-in">
+                <h2>Our Sponsors</h2>
+                <p>Proud partners making this competition possible</p>
+            </div>
+            
+            
+            <!-- Silver Sponsors -->
+            <div class="sponsor-tier-section animate-on-scroll fade-in">
+                <!-- <h3 class="sponsor-tier-title">Silver Sponsors</h3> -->
+                <div class="sponsor-grid silver">
+                    <div class="sponsor-card">
+                        <img src="golden.png" alt="Silver Sponsor 1" class="sponsor-logo" />
+                        <p class="sponsor-name">Golden Ocean Marine Services</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bronze Sponsors -->
+            <div class="sponsor-tier-section animate-on-scroll fade-in">
+                <!-- <h3 class="sponsor-tier-title">Bronze Sponsors</h3> -->
+                <div class="sponsor-grid bronze">
+                    <div class="sponsor-card">
+                        <img src="wie-logo.png" alt="Bronze Sponsor 1" class="sponsor-logo" />
+                        <p class="sponsor-name">WIE E-JUST Society</p>
+                    </div>
+                    <div class="sponsor-card">
+                        <img src="r8-logo.png" alt="Bronze Sponsor 2" class="sponsor-logo" />
+                        <p class="sponsor-name">R8 SAC</p>
+                    </div>
+                    <div class="sponsor-card">
+                        <img src="ras-logo.png" alt="Bronze Sponsor 3" class="sponsor-logo" />
+                        <p class="sponsor-name">RAS E-JUST Chapter</p>
+                    </div>
+                    <div class="sponsor-card">
+                        <img src="cs-logo.png" alt="Bronze Sponsor 4" class="sponsor-logo" />
+                        <p class="sponsor-name">CS E-JUST Chapter</p>
+                    </div>
+                    <div class="sponsor-card">
+                        <img src="ias-logo.png" alt="Bronze Sponsor 5" class="sponsor-logo" />
+                        <p class="sponsor-name">IAS E-JUST Chapter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section" id="faq">
         <div class="container">
             <div class="section-header animate-on-scroll fade-in">
                 <h2>Frequently Asked Questions</h2>
             </div>
             <div class="animate-on-scroll fade-in">
-                <div class="faq-item"><div class="faq-question">Are LEGO and Arduino projects judged by the same criteria?</div><div class="faq-answer"><p>Yes, all teams are judged equally based on the scoring guidelines for their category, regardless of the platform used.</p></div></div>
-                <div class="faq-item"><div class="faq-question">Can we use the pool's water to extinguish the fire?</div><div class="faq-answer"><p>Yes, provided your mechanism is eco-friendly and does not contaminate the water.</p></div></div>
-                <div class="faq-item"><div class="faq-question">Are there restrictions on motors?</div><div class="faq-answer"><p>No, as long as your motor and entire power system comply with the 12V maximum electrical guideline.</p></div></div>
-                <div class="faq-item"><div class="faq-question">Can we cancel after registering?</div><div class="faq-answer"><p>It is not recommended as fees are non-refundable. For urgent cancellations, please notify organizers at least 3 weeks before the competition.</p></div></div>
-                <div class="faq-item"><div class="faq-question">Can a team have members from different age categories?</div><div class="faq-answer"><p>Yes, but the majority must be within the registered category. A minority of members (1-2) can be from a younger category, but not an older one.</p></div></div>
+                <div class="faq-item">
+                    <div class="faq-question">Are LEGO and Arduino projects judged by the same criteria?</div>
+                    <div class="faq-answer">
+                        <p>Yes, all teams are judged equally based on the scoring guidelines for their category,
+                            regardless of the platform used.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can we use the pool's water to extinguish the fire?</div>
+                    <div class="faq-answer">
+                        <p>Yes, provided your mechanism is eco-friendly and does not contaminate the water.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are there restrictions on motors?</div>
+                    <div class="faq-answer">
+                        <p>No, as long as your motor and entire power system comply with the 12V maximum electrical
+                            guideline.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can we cancel after registering?</div>
+                    <div class="faq-answer">
+                        <p>It is not recommended as fees are non-refundable. For urgent cancellations, please notify
+                            organizers at least 3 weeks before the competition.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can a team have members from different age categories?</div>
+                    <div class="faq-answer">
+                        <p>Yes, but the majority must be within the registered category. A minority of members (1-2) can
+                            be from a younger category, but not an older one.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1678,18 +3211,18 @@
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 50;
-            
+
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.animationDelay = Math.random() * 15 + 's';
                 particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                
+
                 // Random colors for particles
                 const colors = ['#0066ff', '#ff6b35', '#00d084', '#8b5cf6'];
                 particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-                
+
                 particlesContainer.appendChild(particle);
             }
         }
@@ -1698,7 +3231,7 @@
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             const scrollToTopBtn = document.getElementById('scrollToTop');
-            
+
             if (window.scrollY > 100) {
                 navbar.classList.add('scrolled');
                 scrollToTopBtn.style.opacity = '1';
@@ -1723,7 +3256,7 @@
             button.addEventListener('click', () => {
                 const answer = button.nextElementSibling;
                 const isOpen = button.classList.contains('open');
-                
+
                 // Close all other FAQs
                 document.querySelectorAll('.faq-question.open').forEach(openButton => {
                     if (openButton !== button) {
@@ -1731,7 +3264,7 @@
                         openButton.nextElementSibling.style.maxHeight = '0';
                     }
                 });
-                
+
                 // Toggle current FAQ
                 button.classList.toggle('open');
                 if (!isOpen) {
@@ -1745,7 +3278,7 @@
         // Enhanced Active Nav Link on Scroll
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-links a');
-        
+
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
@@ -1803,11 +3336,11 @@
 
         // Add hover effects to score badges
         document.querySelectorAll('.points-badge').forEach(badge => {
-            badge.addEventListener('mouseenter', function() {
+            badge.addEventListener('mouseenter', function () {
                 this.style.transform = 'scale(1.1) rotate(2deg)';
             });
-            
-            badge.addEventListener('mouseleave', function() {
+
+            badge.addEventListener('mouseleave', function () {
                 this.style.transform = 'scale(1) rotate(0deg)';
             });
         });
@@ -1816,7 +3349,7 @@
         function typeWriter(element, text, speed = 100) {
             let i = 0;
             element.innerHTML = '';
-            
+
             function type() {
                 if (i < text.length) {
                     element.innerHTML += text.charAt(i);
@@ -1829,13 +3362,13 @@
 
         // Enhanced card interactions
         document.querySelectorAll('.structure-card, .prize-card, .sdg-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = this.style.transform.includes('scale') ? 
-                    this.style.transform : 
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = this.style.transform.includes('scale') ?
+                    this.style.transform :
                     'translateY(-10px) scale(1.02)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
@@ -1851,5 +3384,5 @@
 
     </script>
 </body>
-</html>
 
+</html>
